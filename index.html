@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Micro-learning: Designing an Album Cover in Adobe Photoshop" />
+  <title>Designing an Album Cover in Adobe Photoshop</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header role="banner">
+    <div class="container">
+      <h1>Designing an Album Cover in Adobe Photoshop</h1>
+      <p class="subtitle">A quick, accessible micro‑lesson with video and downloadable assets</p>
+      <span class="badge" aria-label="Meets project requirements">HTML5 • Images • Video • 508 Accessible</span>
+    </div>
+  </header>
+
+  <nav aria-label="Primary">
+    <div class="container">
+      <ul>
+        <li><a href="#intro">Introduction</a></li>
+        <li><a href="#steps">Steps</a></li>
+        <li><a href="#video">Video</a></li>
+        <li><a href="#resources">Resources</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main id="main-content" tabindex="-1">
+    <section id="intro" aria-labelledby="intro-h">
+      <h2 id="intro-h">What you'll make</h2>
+      <p>You'll craft a square album cover using Photoshop: set up the canvas, blend imagery with shapes, add effects, and finish with strong, readable typography. This page uses semantic HTML5, includes images &amp; multimedia, and follows Section 508 practices.</p>
+
+      <figure>
+        <img src="images/self-created-badge.svg" alt="Geometric album-cover placeholder graphic with centered circular logo and the words 'ALBUM COVER'." />
+        <figcaption>Self‑created graphic element (SVG) you can replace with your own artwork.</figcaption>
+      </figure>
+    </section>
+
+    <section id="steps" aria-labelledby="steps-h">
+      <h2 id="steps-h">Step‑by‑step</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>1) New document</h3>
+          <ul>
+            <li>Square canvas (e.g., 3000×3000 px)</li>
+            <li>RGB color; 300 PPI if printing</li>
+            <li>Name your file clearly</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>2) Imagery</h3>
+          <ul>
+            <li>Place your primary photo or artwork</li>
+            <li>Use Camera Raw/Adjustments for tone &amp; color</li>
+            <li>Compose with clear focal point</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>3) Shapes &amp; masks</h3>
+          <ul>
+            <li>Draw simple geometric accents</li>
+            <li>Create clipping masks for image-in-shape effects</li>
+            <li>Try subtle blend modes</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>4) Effects</h3>
+          <ul>
+            <li>Apply tasteful filters (e.g., Oil Paint)</li>
+            <li>Use blur &amp; shadow for depth</li>
+            <li>Unify color with Adjustment Layers</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>5) Typography</h3>
+          <ul>
+            <li>Keep to 1–2 typefaces</li>
+            <li>Ensure contrast and legibility</li>
+            <li>Export: JPEG/PNG (sRGB)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="video" aria-labelledby="video-h">
+      <h2 id="video-h">Video (≤ 1 minute)</h2>
+      <p>Replace the source below with your original video (with audio, at least three cuts, and overlay text/graphics). A caption track is included for accessibility.</p>
+      <video controls preload="none" aria-describedby="video-desc">
+        <source src="Media/album-cover-tutorial.mp4" type="video/mp4" />
+        <track src="Media/album-cover-captions.vtt" kind="captions" srclang="en" label="English captions" default />
+        Your browser does not support the video element.
+      </video>
+      <p id="video-desc" class="muted">Tip: Include on‑screen labels for each step and keep cuts snappy.</p>
+    </section>
+
+    <section id="resources" aria-labelledby="res-h">
+      <h2 id="res-h">Checklist &amp; resources</h2>
+      <ul>
+        <li>HTML5 structure: <code>&lt;head&gt;</code>, <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;footer&gt;</code></li>
+        <li>Images &amp; multimedia: <code>&lt;img&gt;</code> with <code>alt</code>; <code>&lt;video&gt;</code> with captions</li>
+        <li>Self‑created graphic element: <code>images/self-created-badge.svg</code></li>
+        <li>508: semantic landmarks, alt text, captions, focus styles, skip link</li>
+      </ul>
+      <p><strong>Replaceables:</strong> swap the SVG and video files with your own assets in <code>/images</code> and <code>/Media</code>.</p>
+    </section>
+  </main>
+
+  <footer role="contentinfo">
+    <div class="container">
+      <p>&copy; 2025 Your Name • <a href="#main-content">Back to top</a></p>
+    </div>
+  </footer>
+</body>
+</html>
