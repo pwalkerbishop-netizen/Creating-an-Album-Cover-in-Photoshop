@@ -3,110 +3,527 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Micro-learning: Designing an Album Cover in Adobe Photoshop" />
-  <title>Designing an Album Cover in Adobe Photoshop</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta name="description" content="Micro-learning: Creating an Album Cover in Adobe Photoshop" />
+  <title>Micro-learning: Designing an Album Cover in Adobe Photoshop</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background-color: #f8f9fa;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 6px;
+      background: #000;
+      color: #fff;
+      padding: 8px;
+      text-decoration: none;
+      z-index: 1000;
+    }
+
+    .skip-link:focus {
+      top: 6px;
+    }
+
+    header {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 2rem 0;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .subtitle {
+      font-size: 1.2rem;
+      opacity: 0.9;
+      margin-bottom: 1rem;
+    }
+
+    .badge {
+      background: rgba(255,255,255,0.2);
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      font-size: 0.9rem;
+    }
+
+    nav {
+      background: #fff;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      padding: 1rem 0;
+    }
+
+    nav li {
+      margin: 0 1rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      transition: all 0.3s ease;
+    }
+
+    nav a:hover, nav a.active {
+      background: #667eea;
+      color: white;
+    }
+
+    main {
+      padding: 3rem 0;
+    }
+
+    .page {
+      display: none;
+    }
+
+    .page.active {
+      display: block;
+    }
+
+    .page h2 {
+      font-size: 2.2rem;
+      margin-bottom: 2rem;
+      text-align: center;
+      color: #333;
+    }
+
+    .intro-content {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .intro-content p {
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+      color: #666;
+    }
+
+    .preview-image {
+      max-width: 100%;
+      height: 300px;
+      background: linear-gradient(45deg, #f0f0f0, #e0e0e0);
+      border: 2px dashed #ccc;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 2rem 0;
+      border-radius: 10px;
+      color: #999;
+      font-size: 1.1rem;
+    }
+
+    .tab-container {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      overflow: hidden;
+      margin: 2rem 0;
+    }
+
+    .tab-buttons {
+      display: flex;
+      background: #f8f9fa;
+      border-bottom: 1px solid #dee2e6;
+    }
+
+    .tab-button {
+      flex: 1;
+      padding: 1rem;
+      border: none;
+      background: transparent;
+      cursor: pointer;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      color: #666;
+    }
+
+    .tab-button:hover {
+      background: rgba(102, 126, 234, 0.1);
+    }
+
+    .tab-button.active {
+      background: #667eea;
+      color: white;
+    }
+
+    .tab-content {
+      display: none;
+      padding: 2rem;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    .step-content h3 {
+      color: #667eea;
+      margin-bottom: 1rem;
+    }
+
+    .step-content p {
+      margin-bottom: 1rem;
+      line-height: 1.8;
+    }
+
+    .step-image {
+      width: 100%;
+      height: 200px;
+      background: linear-gradient(45deg, #f0f0f0, #e0e0e0);
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 1rem 0;
+      color: #999;
+    }
+
+    .download-links {
+      background: #f8f9fa;
+      padding: 1.5rem;
+      border-radius: 8px;
+      margin: 1.5rem 0;
+    }
+
+    .download-links h4 {
+      margin-bottom: 1rem;
+      color: #333;
+    }
+
+    .download-links ul {
+      list-style: none;
+    }
+
+    .download-links li {
+      margin: 0.5rem 0;
+    }
+
+    .download-links a {
+      color: #667eea;
+      text-decoration: none;
+      padding: 0.3rem 0;
+      display: inline-block;
+    }
+
+    .download-links a:hover {
+      text-decoration: underline;
+    }
+
+    .video-container {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .video-placeholder {
+      width: 100%;
+      height: 400px;
+      background: #000;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.2rem;
+      margin: 2rem 0;
+    }
+
+    .video-description {
+      color: #666;
+      font-style: italic;
+      margin: 1rem 0;
+    }
+
+    footer {
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 2rem 0;
+      margin-top: 4rem;
+    }
+
+    footer a {
+      color: #667eea;
+    }
+
+    @media (max-width: 768px) {
+      .tab-buttons {
+        flex-wrap: wrap;
+      }
+      
+      .tab-button {
+        flex: 1 0 50%;
+        min-width: 120px;
+      }
+      
+      nav ul {
+        flex-wrap: wrap;
+      }
+      
+      header h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
 
   <header role="banner">
     <div class="container">
-      <h1>Designing an Album Cover in Adobe Photoshop</h1>
+      <h1>Micro-learning: Designing an Album Cover in Adobe Photoshop</h1>
       <p class="subtitle">A quick, accessible micro‑lesson with video and downloadable assets</p>
-      <span class="badge" aria-label="Meets project requirements">HTML5 • Images • Video • 508 Accessible</span>
     </div>
   </header>
 
   <nav aria-label="Primary">
     <div class="container">
       <ul>
-        <li><a href="#intro">Introduction</a></li>
-        <li><a href="#steps">Steps</a></li>
-        <li><a href="#video">Video</a></li>
-        <li><a href="#resources">Resources</a></li>
+        <li><a href="#" onclick="showPage('intro')" class="nav-link active">Overview</a></li>
+        <li><a href="#" onclick="showPage('steps')" class="nav-link">Modules</a></li>
+        <li><a href="#" onclick="showPage('video')" class="nav-link">Multimedia</a></li>
       </ul>
     </div>
   </nav>
 
   <main id="main-content" tabindex="-1">
-    <section id="intro" aria-labelledby="intro-h">
-      <h2 id="intro-h">What you'll make</h2>
-      <p>You'll craft a square album cover using Photoshop: set up the canvas, blend imagery with shapes, add effects, and finish with strong, readable typography. This page uses semantic HTML5, includes images &amp; multimedia, and follows Section 508 practices.</p>
-
-      <figure>
-        <img src="images/self-created-badge.svg" alt="Geometric album-cover placeholder graphic with centered circular logo and the words 'ALBUM COVER'." />
-        <figcaption>Self‑created graphic element (SVG) you can replace with your own artwork.</figcaption>
-      </figure>
-    </section>
-
-    <section id="steps" aria-labelledby="steps-h">
-      <h2 id="steps-h">Step‑by‑step</h2>
-      <div class="grid">
-        <div class="card">
-          <h3>1) New document</h3>
-          <ul>
-            <li>Square canvas (e.g., 3000×3000 px)</li>
-            <li>RGB color; 300 PPI if printing</li>
-            <li>Name your file clearly</li>
-          </ul>
-        </div>
-        <div class="card">
-          <h3>2) Imagery</h3>
-          <ul>
-            <li>Place your primary photo or artwork</li>
-            <li>Use Camera Raw/Adjustments for tone &amp; color</li>
-            <li>Compose with clear focal point</li>
-          </ul>
-        </div>
-        <div class="card">
-          <h3>3) Shapes &amp; masks</h3>
-          <ul>
-            <li>Draw simple geometric accents</li>
-            <li>Create clipping masks for image-in-shape effects</li>
-            <li>Try subtle blend modes</li>
-          </ul>
-        </div>
-        <div class="card">
-          <h3>4) Effects</h3>
-          <ul>
-            <li>Apply tasteful filters (e.g., Oil Paint)</li>
-            <li>Use blur &amp; shadow for depth</li>
-            <li>Unify color with Adjustment Layers</li>
-          </ul>
-        </div>
-        <div class="card">
-          <h3>5) Typography</h3>
-          <ul>
-            <li>Keep to 1–2 typefaces</li>
-            <li>Ensure contrast and legibility</li>
-            <li>Export: JPEG/PNG (sRGB)</li>
-          </ul>
+    <!-- Overview Page -->
+    <div id="intro" class="page active">
+      <div class="container">
+        <h2>Learning Objectives</h2>
+        <div class="intro-content">
+          <p>You'll craft a professional square album cover using Adobe Photoshop that combines stunning imagery, creative typography, and eye-catching effects. This comprehensive tutorial will guide you through every step of the design process, from initial canvas setup to final export.</p>
+          
+          <div class="preview-image">
+            [Your Album Cover Preview Image Here - 500x500px]
+          </div>
+          
+          <p>By the end of this tutorial, you'll have mastered essential Photoshop techniques including layer management, blending modes, typography design, and professional export settings. Whether you're designing for digital streaming platforms or physical print, this course covers all the technical requirements you need to know.</p>
+          
+          <p>This project incorporates modern design principles with accessibility in mind, ensuring your album cover looks great across all devices and platforms while maintaining professional industry standards.</p>
+          
+          <div class="download-links">
+            <h4>🎨 Project Resources</h4>
+            <ul>
+              <li><a href="#" download>Sample Album Cover Template (PSD)</a></li>
+              <li><a href="#" download>High-Resolution Stock Photos Pack</a></li>
+              <li><a href="#" download>Typography Guide PDF</a></li>
+              <li><a href="#" download>Color Palette Swatches</a></li>
+              <li><a href="#" download>Export Settings Preset</a></li>
+            </ul>
+          </div>
         </div>
       </div>
-    </section>
+    </div>
 
-    <section id="video" aria-labelledby="video-h">
-      <h2 id="video-h">Video (≤ 1 minute)</h2>
-      <p>Replace the source below with your original video (with audio, at least three cuts, and overlay text/graphics). A caption track is included for accessibility.</p>
-      <video controls preload="none" aria-describedby="video-desc">
-        <source src="Media/album-cover-tutorial.mp4" type="video/mp4" />
-        <track src="Media/album-cover-captions.vtt" kind="captions" srclang="en" label="English captions" default />
-        Your browser does not support the video element.
-      </video>
-      <p id="video-desc" class="muted">Tip: Include on‑screen labels for each step and keep cuts snappy.</p>
-    </section>
+    <!-- Course Content Page -->
+    <div id="steps" class="page">
+      <div class="container">
+        <h2>Modules</h2>
+        <p style="text-align: center; margin-bottom: 2rem; color: #666;">Click through each step below to learn the complete album cover design process</p>
+        
+        <div class="tab-container">
+          <div class="tab-buttons">
+            <button class="tab-button active" onclick="showTab(0)">1. New Document</button>
+            <button class="tab-button" onclick="showTab(1)">2. Imagery</button>
+            <button class="tab-button" onclick="showTab(2)">3. Shapes & Masks</button>
+            <button class="tab-button" onclick="showTab(3)">4. Effects</button>
+            <button class="tab-button" onclick="showTab(4)">5. Typography</button>
+          </div>
 
-    <section id="resources" aria-labelledby="res-h">
-      <h2 id="res-h">Checklist &amp; resources</h2>
-      <ul>
-        <li>HTML5 structure: <code>&lt;head&gt;</code>, <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;footer&gt;</code></li>
-        <li>Images &amp; multimedia: <code>&lt;img&gt;</code> with <code>alt</code>; <code>&lt;video&gt;</code> with captions</li>
-        <li>Self‑created graphic element: <code>images/self-created-badge.svg</code></li>
-        <li>508: semantic landmarks, alt text, captions, focus styles, skip link</li>
-      </ul>
-      <p><strong>Replaceables:</strong> swap the SVG and video files with your own assets in <code>/images</code> and <code>/Media</code>.</p>
-    </section>
+          <!-- Tab 1: New Document -->
+          <div class="tab-content active step-content">
+            <h3>Setting Up Your Canvas</h3>
+            <p>The foundation of any great album cover starts with proper document setup. Industry standards require specific dimensions and settings to ensure your design looks perfect whether it's displayed on Spotify, Apple Music, or printed on vinyl.</p>
+            
+            <div class="step-image">[Screenshot: Photoshop New Document Dialog]</div>
+            
+            <p><strong>Canvas Specifications:</strong></p>
+            <ul style="margin-left: 2rem; margin-bottom: 1rem;">
+              <li>Dimensions: 3000×3000 pixels (square format)</li>
+              <li>Resolution: 300 PPI for print, 72 PPI for digital only</li>
+              <li>Color Mode: RGB for digital, CMYK for print</li>
+              <li>Background: Transparent or white</li>
+            </ul>
+            
+            <p>Pro tip: Always work with larger dimensions than you need. You can always scale down for different platforms, but scaling up reduces quality. Most streaming services accept artwork up to 4000×4000 pixels.</p>
+            
+            <div class="download-links">
+              <h4>📁 Downloads for this step</h4>
+              <ul>
+                <li><a href="#" download>Photoshop Document Template (PSD)</a></li>
+                <li><a href="#" download>Platform Size Requirements Guide</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Tab 2: Imagery -->
+          <div class="tab-content step-content">
+            <h3>Working with Imagery</h3>
+            <p>Great album covers tell a story through powerful imagery. Whether you're using photography, illustrations, or abstract art, the key is creating a strong focal point that draws the viewer in and represents the music's mood and genre.</p>
+            
+            <div class="step-image">[Screenshot: Photoshop with main image placed]</div>
+            
+            <p><strong>Image Selection Tips:</strong></p>
+            <ul style="margin-left: 2rem; margin-bottom: 1rem;">
+              <li>Choose high-resolution images (minimum 300 DPI)</li>
+              <li>Consider how the image will look at thumbnail size</li>
+              <li>Ensure proper licensing for commercial use</li>
+              <li>Think about color harmony with text placement</li>
+            </ul>
+            
+            <p>Use Camera Raw or adjustment layers to perfect your image's tone, contrast, and color balance. The goal is to create a cohesive mood that matches your musical style while ensuring the image remains impactful at small sizes.</p>
+            
+            <div class="download-links">
+              <h4>📁 Downloads for this step</h4>
+              <ul>
+                <li><a href="#" download>High-Res Stock Photo Collection</a></li>
+                <li><a href="#" download>Camera Raw Preset Pack</a></li>
+                <li><a href="#" download>Color Grading LUTs</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Tab 3: Shapes & Masks -->
+          <div class="tab-content step-content">
+            <h3>Creative Shapes and Masking</h3>
+            <p>Geometric shapes and creative masking techniques can transform ordinary photos into striking album artwork. Learn to use clipping masks, layer masks, and custom shapes to create depth and visual interest.</p>
+            
+            <div class="step-image">[Screenshot: Shape layers and masks in action]</div>
+            
+            <p><strong>Essential Techniques:</strong></p>
+            <ul style="margin-left: 2rem; margin-bottom: 1rem;">
+              <li>Create geometric frames using shape tools</li>
+              <li>Apply clipping masks for image-in-shape effects</li>
+              <li>Use layer masks for smooth blending</li>
+              <li>Experiment with blend modes (Multiply, Screen, Overlay)</li>
+            </ul>
+            
+            <p>Remember that less is often more. A few well-placed geometric elements can be more effective than busy, complex designs. Focus on creating balance and guiding the viewer's eye toward your main focal point.</p>
+            
+            <div class="download-links">
+              <h4>📁 Downloads for this step</h4>
+              <ul>
+                <li><a href="#" download>Custom Shape Library (CSH)</a></li>
+                <li><a href="#" download>Geometric Pattern Brushes</a></li>
+                <li><a href="#" download>Blend Mode Cheat Sheet</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Tab 4: Effects -->
+          <div class="tab-content step-content">
+            <h3>Adding Polish with Effects</h3>
+            <p>Strategic use of filters, shadows, and adjustment layers can elevate your album cover from good to professional. Learn which effects work best for different music genres and how to apply them tastefully.</p>
+            
+            <div class="step-image">[Screenshot: Layer effects panel and filter gallery]</div>
+            
+            <p><strong>Popular Effect Techniques:</strong></p>
+            <ul style="margin-left: 2rem; margin-bottom: 1rem;">
+              <li>Subtle drop shadows for depth</li>
+              <li>Gaussian blur for dreamy backgrounds</li>
+              <li>Oil Paint filter for artistic looks</li>
+              <li>Gradient overlays for mood enhancement</li>
+            </ul>
+            
+            <p>The key to professional-looking effects is restraint. Use adjustment layers to unify your color palette and ensure all elements feel cohesive. Always preview your work at thumbnail size to ensure effects don't become muddy when scaled down.</p>
+            
+            <div class="download-links">
+              <h4>📁 Downloads for this step</h4>
+              <ul>
+                <li><a href="#" download>Professional Effect Presets</a></li>
+                <li><a href="#" download>Gradient Collection (GRD)</a></li>
+                <li><a href="#" download>Genre-Specific Effect Guide</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Tab 5: Typography -->
+          <div class="tab-content step-content">
+            <h3>Typography and Final Export</h3>
+            <p>Typography can make or break an album cover. Learn to choose fonts that complement your music style, ensure readability at all sizes, and create hierarchy between artist name, album title, and additional text.</p>
+            
+            <div class="step-image">[Screenshot: Typography layers and character panel]</div>
+            
+            <p><strong>Typography Best Practices:</strong></p>
+            <ul style="margin-left: 2rem; margin-bottom: 1rem;">
+              <li>Limit to 1-2 complementary typefaces</li>
+              <li>Ensure high contrast with background</li>
+              <li>Test readability at thumbnail size</li>
+              <li>Consider font licensing for commercial use</li>
+            </ul>
+            
+            <p>For final export, save your work in multiple formats: PSD for future edits, high-res JPEG/PNG for distribution, and create versions for different platforms (Spotify prefers square, some services accept rectangular).</p>
+            
+            <div class="download-links">
+              <h4>📁 Downloads for this step</h4>
+              <ul>
+                <li><a href="#" download>Curated Font Collection</a></li>
+                <li><a href="#" download>Export Action Set</a></li>
+                <li><a href="#" download>Platform Export Templates</a></li>
+                <li><a href="#" download>Final Project PSD</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Video Page -->
+    <div id="video" class="page">
+      <div class="container">
+        <h2>Video Tutorial (≤ 1 minute)</h2>
+        <div class="video-container">
+          <p>Watch the complete process condensed into a quick, easy-to-follow video tutorial with step-by-step instructions and professional tips.</p>
+          
+          <div class="video-placeholder">
+            🎥 [Your Tutorial Video Here - Replace with actual video element]
+          </div>
+          
+          <p class="video-description">This video includes captions, on-screen labels for each step, and smooth transitions between techniques. Perfect for visual learners who want to see the entire process in action.</p>
+          
+          <div class="download-links">
+            <h4>📺 Video Resources</h4>
+            <ul>
+              <li><a href="#" download>Video Transcript (TXT)</a></li>
+              <li><a href="#" download>Closed Captions File (VTT)</a></li>
+              <li><a href="#" download>Photoshop Action from Video</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
   </main>
 
   <footer role="contentinfo">
@@ -114,5 +531,49 @@
       <p>&copy; 2025 Your Name • <a href="#main-content">Back to top</a></p>
     </div>
   </footer>
+
+  <script>
+    // Page navigation
+    function showPage(pageId) {
+      // Hide all pages
+      const pages = document.querySelectorAll('.page');
+      pages.forEach(page => page.classList.remove('active'));
+      
+      // Show selected page
+      document.getElementById(pageId).classList.add('active');
+      
+      // Update nav links
+      const navLinks = document.querySelectorAll('.nav-link');
+      navLinks.forEach(link => link.classList.remove('active'));
+      event.target.classList.add('active');
+      
+      // Scroll to top
+      window.scrollTo(0, 0);
+    }
+
+    // Tab navigation for steps page
+    function showTab(tabIndex) {
+      // Hide all tab contents
+      const tabContents = document.querySelectorAll('.tab-content');
+      tabContents.forEach(content => content.classList.remove('active'));
+      
+      // Show selected tab content
+      tabContents[tabIndex].classList.add('active');
+      
+      // Update tab buttons
+      const tabButtons = document.querySelectorAll('.tab-button');
+      tabButtons.forEach(button => button.classList.remove('active'));
+      tabButtons[tabIndex].classList.add('active');
+    }
+
+    // Add keyboard support for accessibility
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        if (e.target.classList.contains('nav-link') || e.target.classList.contains('tab-button')) {
+          e.target.click();
+        }
+      }
+    });
+  </script>
 </body>
 </html>
