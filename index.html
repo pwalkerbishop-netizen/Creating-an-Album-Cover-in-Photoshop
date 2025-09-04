@@ -5,7 +5,76 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Micro-learning: Creating an Album Cover in Adobe Photoshop" />
   <title>Micro-learning: Designing an Album Cover in Adobe Photoshop</title>
-  <link rel="stylesheet" href="style.css" />
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;line-height:1.6;color:#333;background-color:#f8f9fa}
+
+    /* Site-wide default for lists */
+    ol,ul{list-style-position:inside;margin-left:0;padding-left:0}
+    ol li,ul li{padding-left:0.25rem;text-indent:0}
+
+    .container{max-width:1200px;margin:0 auto;padding:0 20px}
+    .skip-link{position:absolute;top:-40px;left:6px;background:#000;color:#fff;padding:8px;text-decoration:none;z-index:1000}
+    .skip-link:focus{top:6px}
+
+    header{background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);color:#fff;padding:2rem 0;text-align:center}
+    header h1{font-size:2.5rem;margin-bottom:.5rem}
+    .subtitle{font-size:1.2rem;opacity:.9;margin-bottom:1rem}
+
+    main{padding:3rem 0}
+
+    .preview-image{max-width:100%;height:300px;background:linear-gradient(45deg,#f0f0f0,#e0e0e0);border:2px dashed #ccc;display:flex;align-items:center;justify-content:center;margin:2rem 0;border-radius:10px;color:#999;font-size:1.1rem}
+
+    .tab-container{background:#fff;border-radius:10px;box-shadow:0 5px 15px rgba(0,0,0,.1);overflow:hidden;margin:2rem 0}
+
+    nav.tab-buttons{
+      display:flex;
+      background:#f8f9fa;
+      border-bottom:1px solid #dee2e6;
+      margin-left:10rem;
+      margin-right:10rem;
+    }
+    .tab-button{flex:1;padding:1rem;border:none;background:transparent;cursor:pointer;font-weight:500;transition:all .3s ease;color:#666}
+    .tab-button:hover{background:rgba(102,126,234,.1)}
+    .tab-button.active{background:#667eea;color:#fff}
+
+    .tab-content{display:block;padding:2rem}
+    .tab-content[hidden]{display:none}
+
+    /* Headings */
+    .step-content h2 {
+      color:#333;
+      font-size:2rem;
+      font-weight:600;
+      margin-bottom:1rem;
+    }
+    .step-content h3 {
+      color:#333;
+      font-size:1.5rem;
+      font-weight:600;
+      margin:1.5rem 0 0.5rem;
+    }
+
+    .step-content p{margin-bottom:1rem;line-height:1.8}
+
+    .step-image{width:100%;height:200px;background:linear-gradient(45deg,#f0f0f0,#e0e0e0);border:1px solid #ddd;border-radius:8px;display:flex;align-items:center;justify-content:center;margin:1rem 0;color:#999}
+
+    .download-links{background:#f8f9fa;padding:1.5rem;border-radius:8px;margin:1.5rem 0}
+    .download-links h4{margin-bottom:1rem;color:#333}
+    .download-links ul{list-style:none}
+    .download-links li{margin:.5rem 0}
+    .download-links a{color:#667eea;text-decoration:none;padding:.3rem 0;display:inline-block}
+    .download-links a:hover{text-decoration:underline}
+
+    footer{background:#333;color:#fff;text-align:center;padding:2rem 0;margin-top:4rem}
+    footer a{color:#667eea}
+
+    @media (max-width:768px){
+      nav.tab-buttons{flex-wrap:wrap;margin-left:1rem;margin-right:1rem}
+      .tab-button{flex:1 0 50%;min-width:120px}
+      .indent{margin-left:1rem!important;margin-right:1rem!important}
+    }
+  </style>
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -18,13 +87,30 @@
   </header>
 
   <main id="main-content" tabindex="-1">
-    <div class="container">
-      <h2>Overview and Learning Objectives</h2>
-      <div class="intro-content">
-        <p>This resource provides an introduction for the process of planning and implementing the creation of an album cover in Adobe Photoshop.</p>
-        <p style="text-align:center">At the end of these modules, you will be able to:</p>
-        <div style="text-align:center">
-          <ol class="centered-list">
+    <div class="tab-container">
+      <nav class="tab-buttons" role="tablist" aria-label="Course modules">
+        <button id="tab-0" class="tab-button active" role="tab" aria-controls="panel-0" aria-selected="true" tabindex="0" onclick="showTab(0)">Start Here</button>
+        <button id="tab-1" class="tab-button" role="tab" aria-controls="panel-1" aria-selected="false" tabindex="-1" onclick="showTab(1)">Module 1: Concept Planning</button>
+        <button id="tab-2" class="tab-button" role="tab" aria-controls="panel-2" aria-selected="false" tabindex="-1" onclick="showTab(2)">Module 2: Gathering Resources</button>
+        <button id="tab-3" class="tab-button" role="tab" aria-controls="panel-3" aria-selected="false" tabindex="-1" onclick="showTab(3)">Module 3: Layout Planning</button>
+        <button id="tab-4" class="tab-button" role="tab" aria-controls="panel-4" aria-selected="false" tabindex="-1" onclick="showTab(4)">Module 4: Applying the Design Plan</button>
+        <button id="tab-5" class="tab-button" role="tab" aria-controls="panel-5" aria-selected="false" tabindex="-1" onclick="showTab(5)">Module 5: Exporting Deliverables</button>
+      </nav>
+
+      <!-- Start Here -->
+      <section id="panel-0" class="tab-content step-content" role="tabpanel" aria-labelledby="tab-0" aria-describedby="course-content-intro">
+        <h2 id="course-content-intro" class="indent" style="margin-left:10rem;">Course Content</h2>
+        <p class="indent" style="text-align:left;margin-bottom:2rem;color:#666;margin-left:10rem;margin-right:10rem;">
+          Click through each module below to learn the complete album cover design process.
+        </p>
+
+        <h2 class="indent" style="margin-left:10rem;">Overview and Learning Objectives</h2>
+        <div class="intro-content" style="text-align:left;">
+          <p class="indent" style="margin-left:10rem;margin-right:10rem;">
+            This resource provides an introduction for the process of planning and implementing the creation of an album cover in Adobe Photoshop.
+          </p>
+          <p class="indent" style="margin-left:10rem;margin-right:10rem;">At the end of these modules, you will be able to:</p>
+          <ol class="indent" style="margin-left:10rem;margin-right:10rem;">
             <li>Articulate the primary components of a graphic design project</li>
             <li>Establish a plan for design projects in Adobe Photoshop</li>
             <li>Demonstrate the ability to apply basic navigation of Photoshop tools</li>
@@ -32,76 +118,162 @@
             <li>Produce a completed design plan for a Photoshop deliverable</li>
           </ol>
         </div>
+      </section>
 
-        <div class="preview-image">
-          [Your Album Cover Preview Image Here - 500x500px]
-        </div>
+      <!-- Module 1 -->
+      <section id="panel-1" class="tab-content step-content" role="tabpanel" aria-labelledby="tab-1" hidden>
+        <h2 class="indent" style="margin-left:10rem;">Setting Up Your Canvas</h2>
+        <p class="indent" style="margin-left:10rem;margin-right:10rem;">
+          The foundation of any great album cover starts with proper document setup...
+        </p>
 
-        <div class="download-links">
-          <h4>Recommended pre-requisites</h4>
+        <h3 class="indent" style="margin-left:10rem;">Sizing Specifications</h3>
+        <ul class="indent" style="margin-left:10rem;margin-right:10rem;">
+          <li>3819×3402 px (square format)</li>
+          <li>300 PPI print / 72 PPI digital</li>
+          <li>RGB (digital) / CMYK (print)</li>
+        </ul>
+
+        <h3 class="indent" style="margin-left:10rem;">Pro Tip</h3>
+        <p class="indent" style="margin-left:10rem;margin-right:10rem;">
+          Always work with larger dimensions than you need. Scaling down keeps quality; scaling up reduces quality.
+        </p>
+
+        <div class="step-image" style="margin-left:10rem;margin-right:10rem;width:auto;max-width:100%;">[Screenshot: Photoshop New Document Dialog]</div>
+
+        <h3 class="indent" style="margin-left:10rem;">Module Downloads</h3>
+        <div class="download-links indent" style="margin-left:10rem;margin-right:10rem;">
           <ul>
-            <li>Access to Adobe Photoshop</li>
-            <li>Basic familiarity with Photoshop tools</li>
-            <li>General understanding of basic graphic design principles</li>
+            <li><a href="#">Photoshop Document Template (PSD)</a></li>
+            <li><a href="#">Platform Size Requirements Guide</a></li>
           </ul>
         </div>
+      </section>
 
-        <div class="download-links">
-          <h4>Project Resources</h4>
+      <!-- Module 2 -->
+      <section id="panel-2" class="tab-content step-content" role="tabpanel" aria-labelledby="tab-2" hidden>
+        <h2 class="indent" style="margin-left:10rem;">Working with Imagery</h2>
+        <p class="indent" style="margin-left:10rem;margin-right:10rem;">
+          Great album covers tell a story through powerful imagery...
+        </p>
+
+        <h3 class="indent" style="margin-left:10rem;">Image Selection Tips</h3>
+        <ul class="indent" style="margin-left:10rem;margin-right:10rem;">
+          <li>Choose high-resolution, licensed images</li>
+          <li>Check thumbnail readability</li>
+          <li>Balance colors with text placement</li>
+        </ul>
+
+        <div class="step-image" style="margin-left:10rem;margin-right:10rem;width:auto;max-width:100%;">[Screenshot: Photoshop with main image placed]</div>
+
+        <h3 class="indent" style="margin-left:10rem;">Module Downloads</h3>
+        <div class="download-links indent" style="margin-left:10rem;margin-right:10rem;">
           <ul>
-            <li><a href="#" download>Sample Album Cover Template (PSD)</a></li>
-            <li><a href="#" download>High-Resolution Stock Photos Pack</a></li>
-            <li><a href="#" download>Typography Guide PDF</a></li>
-            <li><a href="#" download>Color Palette Swatches</a></li>
-            <li><a href="#" download>Export Settings Preset</a></li>
+            <li><a href="#">High-Res Stock Photo Collection</a></li>
+            <li><a href="#">Camera Raw Preset Pack</a></li>
+            <li><a href="#">Color Grading LUTs</a></li>
           </ul>
         </div>
-      </div>
+      </section>
 
-      <h2>Course Content</h2>
-      <p style="text-align: center; margin-bottom: 2rem; color: #666;">
-        Click through each module below to learn the complete album cover design process. This project is self paced. You will need to complete the steps in the order described in each module, but feel free to skip ahead as you plan your album cover.
-      </p>
-      
-      <div class="tab-container">
-        <div class="tab-buttons">
-          <button class="tab-button active" onclick="showTab(0)">Module 1: Concept Planning</button>
-          <button class="tab-button" onclick="showTab(1)">Module 2: Gathering Resources</button>
-          <button class="tab-button" onclick="showTab(2)">Module 3: Layout Planning</button>
-          <button class="tab-button" onclick="showTab(3)">Module 4: Applying the Design Plan</button>
-          <button class="tab-button" onclick="showTab(4)">Module 5: Exporting Deliverables</button>
-        </div>
+      <!-- Module 3 -->
+      <section id="panel-3" class="tab-content step-content" role="tabpanel" aria-labelledby="tab-3" hidden>
+        <h2 class="indent" style="margin-left:10rem;">Creative Shapes and Masking</h2>
+        <p class="indent" style="margin-left:10rem;margin-right:10rem;">
+          Use geometric shapes, layer masks, and clipping masks to create depth and visual interest without clutter.
+        </p>
 
-        <div class="tab-content active step-content">
-          <h3>Setting Up Your Canvas</h3>
-          <p>The foundation of any great album cover starts with proper document setup...</p>
-          <div class="step-image">[Screenshot: Photoshop New Document Dialog]</div>
-        </div>
+        <h3 class="indent" style="margin-left:10rem;">Essential Techniques</h3>
+        <ul class="indent" style="margin-left:10rem;margin-right:10rem;">
+          <li>Create geometric frames using shape tools</li>
+          <li>Apply clipping masks for image-in-shape effects</li>
+          <li>Use layer masks for smooth blending</li>
+          <li>Experiment with blend modes (Multiply, Screen, Overlay)</li>
+        </ul>
 
-        <div class="tab-content step-content">
-          <h3>Working with Imagery</h3>
-          <p>Great album covers tell a story through powerful imagery...</p>
-          <div class="step-image">[Screenshot: Photoshop with main image placed]</div>
-        </div>
+        <h3 class="indent" style="margin-left:10rem;">Pro Tip</h3>
+        <p class="indent" style="margin-left:10rem;margin-right:10rem;">
+          Less is more—use a few strong geometric elements to guide the eye to your focal point.
+        </p>
 
-        <div class="tab-content step-content">
-          <h3>Creative Shapes and Masking</h3>
-          <p>Geometric shapes and creative masking techniques...</p>
-          <div class="step-image">[Screenshot: Shape layers and masks in action]</div>
-        </div>
+        <div class="step-image" style="margin-left:10rem;margin-right:10rem;width:auto;max-width:100%;">[Screenshot: Shape layers and masks in action]</div>
 
-        <div class="tab-content step-content">
-          <h3>Adding Polish with Effects</h3>
-          <p>Strategic use of filters, shadows, and adjustment layers...</p>
-          <div class="step-image">[Screenshot: Layer effects panel and filter gallery]</div>
+        <h3 class="indent" style="margin-left:10rem;">Module Downloads</h3>
+        <div class="download-links indent" style="margin-left:10rem;margin-right:10rem;">
+          <ul>
+            <li><a href="#">Custom Shape Library (CSH)</a></li>
+            <li><a href="#">Geometric Pattern Brushes</a></li>
+            <li><a href="#">Blend Mode Cheat Sheet</a></li>
+          </ul>
         </div>
+      </section>
 
-        <div class="tab-content step-content">
-          <h3>Typography and Final Export</h3>
-          <p>Typography can make or break an album cover...</p>
-          <div class="step-image">[Screenshot: Typography layers and character panel]</div>
+      <!-- Module 4 -->
+      <section id="panel-4" class="tab-content step-content" role="tabpanel" aria-labelledby="tab-4" hidden>
+        <h2 class="indent" style="margin-left:10rem;">Adding Polish with Effects</h2>
+        <p class="indent" style="margin-left:10rem;margin-right:10rem;">
+          Subtle, purposeful effects elevate the work: unify colors, add depth, and guide the eye without muddying details at small sizes.
+        </p>
+
+        <h3 class="indent" style="margin-left:10rem;">Popular Effect Techniques</h3>
+        <ul class="indent" style="margin-left:10rem;margin-right:10rem;">
+          <li>Subtle drop shadows for depth</li>
+          <li>Gaussian blur for dreamy backgrounds</li>
+          <li>Gradient overlays / LUTs for mood</li>
+          <li>Adjustment layers to unify the palette</li>
+        </ul>
+
+        <h3 class="indent" style="margin-left:10rem;">Pro Tip</h3>
+        <p class="indent" style="margin-left:10rem;margin-right:10rem;">
+          Preview at thumbnail size often—effects that look great large can turn muddy when scaled down.
+        </p>
+
+        <div class="step-image" style="margin-left:10rem;margin-right:10rem;width:auto;max-width:100%;">[Screenshot: Layer effects panel and filter gallery]</div>
+
+        <h3 class="indent" style="margin-left:10rem;">Module Downloads</h3>
+        <div class="download-links indent" style="margin-left:10rem;margin-right:10rem;">
+          <ul>
+            <li><a href="#">Professional Effect Presets</a></li>
+            <li><a href="#">Gradient Collection (GRD)</a></li>
+            <li><a href="#">Genre-Specific Effect Guide</a></li>
+          </ul>
         </div>
-      </div>
+      </section>
+
+      <!-- Module 5 -->
+      <section id="panel-5" class="tab-content step-content" role="tabpanel" aria-labelledby="tab-5" hidden>
+        <h2 class="indent" style="margin-left:10rem;">Typography and Final Export</h2>
+        <p class="indent" style="margin-left:10rem;margin-right:10rem;">
+          Typography can make or break the cover. Keep it legible, well-contrasted, and consistent across outputs.
+        </p>
+
+        <h3 class="indent" style="margin-left:10rem;">Typography Best Practices</h3>
+        <ul class="indent" style="margin-left:10rem;margin-right:10rem;">
+          <li>Limit to 1–2 complementary typefaces</li>
+          <li>Ensure high contrast with the background</li>
+          <li>Test readability at thumbnail size</li>
+          <li>Check font licensing for commercial use</li>
+        </ul>
+
+        <h3 class="indent" style="margin-left:10rem;">Final Export Checklist</h3>
+        <ul class="indent" style="margin-left:10rem;margin-right:10rem;">
+          <li>Save master PSD for future edits</li>
+          <li>Export high-res PNG/JPEG for distribution</li>
+          <li>Create platform-specific sizes (streaming services, print)</li>
+        </ul>
+
+        <div class="step-image" style="margin-left:10rem;margin-right:10rem;width:auto;max-width:100%;">[Screenshot: Typography layers and character panel]</div>
+
+        <h3 class="indent" style="margin-left:10rem;">Module Downloads</h3>
+        <div class="download-links indent" style="margin-left:10rem;margin-right:10rem;">
+          <ul>
+            <li><a href="#">Curated Font Collection</a></li>
+            <li><a href="#">Export Action Set</a></li>
+            <li><a href="#">Platform Export Templates</a></li>
+            <li><a href="#">Final Project PSD</a></li>
+          </ul>
+        </div>
+      </section>
     </div>
   </main>
 
@@ -112,20 +284,40 @@
   </footer>
 
   <script>
-    function showTab(tabIndex) {
-      const tabContents = document.querySelectorAll('.tab-content');
-      tabContents.forEach(content => content.classList.remove('active'));
-      tabContents[tabIndex].classList.add('active');
-      const tabButtons = document.querySelectorAll('.tab-button');
-      tabButtons.forEach(button => button.classList.remove('active'));
-      tabButtons[tabIndex].classList.add('active');
+    function showTab(i){
+      const panels = document.querySelectorAll('[role="tabpanel"]');
+      const tabs = document.querySelectorAll('[role="tab"]');
+
+      panels.forEach((p, idx) => {
+        if(idx === i){ p.removeAttribute('hidden'); }
+        else { p.setAttribute('hidden',''); }
+      });
+
+      tabs.forEach((t, idx) => {
+        const active = idx === i;
+        t.classList.toggle('active', active);
+        t.setAttribute('aria-selected', active ? 'true' : 'false');
+        t.setAttribute('tabindex', active ? '0' : '-1');
+      });
+
+      tabs[i].focus();
     }
 
-    document.addEventListener('keydown', function(e) {
-      if (e.key === 'Enter' || e.key === ' ') {
-        if (e.target.classList.contains('tab-button')) {
-          e.target.click();
-        }
+    document.addEventListener('keydown', e => {
+      const isTab = e.target.getAttribute('role') === 'tab';
+      if(!isTab) return;
+      const tabs = Array.from(document.querySelectorAll('[role="tab"]'));
+      const current = tabs.indexOf(e.target);
+
+      if(e.key === 'Enter' || e.key === ' '){
+        e.preventDefault();
+        showTab(current);
+      } else if(e.key === 'ArrowRight'){
+        e.preventDefault();
+        tabs[(current + 1) % tabs.length].focus();
+      } else if(e.key === 'ArrowLeft'){
+        e.preventDefault();
+        tabs[(current - 1 + tabs.length) % tabs.length].focus();
       }
     });
   </script>
