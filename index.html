@@ -6,6 +6,14 @@
   <meta name="description" content="Micro-learning: Album Cover Template Usage in Adobe Photoshop" />
   <title>Micro-learning: Album Cover Template Usage in Adobe Photoshop</title>
   <style>
+    .visually-hidden {
+  position: absolute !important;
+  height: 1px; width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap;
+  border: 0; padding: 0; margin: -1px;
+}
     *{margin:0;padding:0;box-sizing:border-box}
     body{font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;line-height:1.6;color:#333;background-color:#f8f9fa}
 
@@ -79,8 +87,25 @@
     }
 
     .step-content p{margin-bottom:1rem;line-height:1.8}
+    
+    img.responsive-img { display:block; max-width:100%; height:auto }
 
-    .step-image{width:100%;height:200px;background:linear-gradient(45deg,#f0f0f0,#e0e0e0);border:1px solid #ddd;border-radius:8px;display:flex;align-items:center;justify-content:center;margin:1rem 0;color:#999}
+img.responsive-img { display:block; max-width:100%; height:auto }
+
+figure.media {
+  margin: 1.25rem auto;          /* center on page */
+  max-width: 1200px;             /* don't get too wide */
+  padding: 0 1rem;               /* a little gutter on small screens */
+}
+
+.step-placeholder {
+  width:100%; height:200px;
+  background:linear-gradient(45deg,#f0f0f0,#e0e0e0);
+  border:1px solid #ddd; border-radius:8px;
+  display:flex; align-items:center; justify-content:center;
+  margin:1rem 0; color:#999;
+}
+
 
     .download-links{background:#f8f9fa;padding:1.5rem;border-radius:8px;margin:1.5rem 0}
     .download-links h4{margin-bottom:1rem;color:#333}
@@ -140,7 +165,6 @@
         <p class="indent" style="margin-left:10rem;margin-right:10rem;">
           You should have already acquired or be prepared to aquire the primary components of your album cover prior to beginning this module. Photoshop skills, such as color correction, layering, transparency, borders, filters, effects, gradients, blending, color overlay, clipping mask, dropshadow, bevel, emboss etc. will not be addressed.
         </p>
-        <!-- tightened paragraph before list -->
         <p class="indent p-tight-after" style="margin-left:10rem;margin-right:10rem;">
           Please reference the following hardware and software requirements:
         </p>
@@ -156,20 +180,24 @@
       <section id="panel-1" class="tab-content step-content" role="tabpanel" aria-labelledby="tab-1" hidden>
         <h2 class="indent" style="margin-left:10rem;">Instructions</h2>
         <figure class="indent" style="margin-left:10rem;margin-right:10rem;">
-  <figcaption>Album Creation from a Photoshop Template</figcaption>
-  <img 
-    class="step-image"
-    src="album-creation-photoshop.png" 
+  <img
+    class="responsive-img"
+    src="album-creation-photoshop.png"
     alt="Infographic showing steps for design creation, template application, adaptation, layout confirmation, and export in Photoshop."
-    aria-describedby="The image is an infographic with a dark blue header displaying the title, "Album Creation from a Photoshop Template." Below the header, there are six rounded rectangular sections arranged in a two-by-three grid, each containing an icon and a short description. The first section features a light bulb icon with the text "Create Your Design." The second section shows a document icon with text "Apply it to the Template." The third section depicts an icon of a person with a settings gear above them and the text "Adapt to the Template." The fourth section has a check mark icon inside a document with "Confirm Your Layout." The last section at the bottom of the grid is wider and features a printer icon with "Export and Order Your Prints!" written inside."
-    width="800" height="800"
-    loading="lazy" decoding="async"
-    style="width:auto;max-width:100%;height:auto;">
+    width="1200" height="1200"
+    loading="lazy" decoding="async">
 </figure>
+<div id="infographic-desc" class="visually-hidden">
+  The infographic includes a dark blue title bar, then five labeled steps:
+  1) Create your design. 
+  2) Apply it to the template. 
+  3) Adapt to the template. 
+  4) Confirm your layout. 
+  5) Export and order your prints.
+</div>
         <p class="indent" style="margin-left:10rem;margin-right:10rem;">
           It’s time to bring an album design plan to life. You might choose to apply previously developed concepts, resources, and layouts from previous work. If you don’t have an immediate album design prepared, that’s okay! Gather some quick photos and graphics to apply to this exercise*. You may also choose to use the sample content provided in the learning resources of the module. The goal is to practice fitting content into an album template.
         </p>
-        <!-- tightened paragraph before list -->
         <p class="indent p-tight-after" style="margin-left:10rem;margin-right:10rem;">
           Begin by opening Photoshop and ensuring that you have the correct dimensions for your final album output. For print production, you will need to work with a professional printshop that provides album printing services. Printshops will provide specifications via a template. Follow the criteria for content placement based on your design plan. Reach out to the printshop as needed to clarify:
         </p>
@@ -180,7 +208,6 @@
         </ul>
         <p class="indent" style="margin-left:10rem;margin-right:10rem;">
           Once your dimensions and template are confirmed you are ready to begin adding resources and text. Graphic design is both a science and an art. Even this far into the implementation of a design plan, it’s okay to make adjustments. New ideas might be generated during the creation phase, so it’s okay to continue experimenting with your design. It’s important to reference your plan while continuing to explore the creative design process.</p>
-        <!-- tightened paragraph before list -->
         <p class="indent p-tight-after" style="margin-left:10rem;margin-right:10rem;">If needed, reference the choices you made in during your design creation to:</p>
         <ul class="indent" style="margin-left:10rem;margin-right:10rem;">
           <li>Stylize fonts</li>
