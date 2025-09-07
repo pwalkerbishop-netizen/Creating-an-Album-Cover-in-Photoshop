@@ -91,11 +91,11 @@
     /* --- Responsive media pattern --- */
     img.responsive-img { display:block; max-width:100%; height:auto; }
 
-    figure.media {
-      margin: 1.25rem auto;          /* center on page */
-      max-width: 1200px;             /* don't get too wide */
-      padding: 0 1rem;               /* a little gutter on small screens */
-    }
+figure.media {
+  margin: 1.25rem auto;
+  max-width: var(--media-w, 1200px); /* default stays 1200 unless overridden */
+  padding: 0 1rem;
+}
 
     .step-placeholder {
       width:100%; height:200px;
@@ -178,8 +178,7 @@
       <section id="panel-1" class="tab-content step-content" role="tabpanel" aria-labelledby="tab-1" hidden>
         <h2 class="indent" style="margin-left:10rem;">Instructions</h2>
 
-        <!-- Centered, responsive figure -->
-        <figure class="media" aria-describedby="infographic-desc">
+        <figure class="media" style="--media-w: 800px;" aria-describedby="infographic-desc">
           <img
             class="responsive-img"
             src="album-creation-photoshop.png"
@@ -188,7 +187,6 @@
             loading="lazy" decoding="async">
         </figure>
 
-        <!-- Long description for screen readers -->
         <div id="infographic-desc" class="visually-hidden">
           The infographic includes a dark blue title bar, then five labeled steps:
           1) Create your design. 
