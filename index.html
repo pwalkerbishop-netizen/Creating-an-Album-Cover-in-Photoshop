@@ -24,7 +24,7 @@
     .step-content ul:last-child,
     .step-content ol:last-child{ margin-bottom:0; }
 
-    /* Keep lists tight under text/headings */
+    /* Keep lists tight under text/headings (no extra space BEFORE bullets) */
     .step-content p + ul,
     .step-content p + ol,
     .step-content h2 + ul,
@@ -32,9 +32,11 @@
     .step-content h3 + ul,
     .step-content h3 + ol{ margin-top:0; }
 
+    /* Site-wide default for lists */
     ol,ul{list-style-position:inside;margin-left:0;padding-left:0}
     ol li,ul li{padding-left:0.25rem;text-indent:0}
 
+    /* Utility: tighten only when a paragraph is right before a list */
     .p-tight-after { margin-bottom:.25rem !important; }
 
     .container{max-width:1200px;margin:0 auto;padding:0 20px}
@@ -65,18 +67,23 @@
     .tab-content{display:block;padding:2rem}
     .tab-content[hidden]{display:none}
 
+    /* Headings */
     .step-content h2 { color:#333; font-size:2rem; font-weight:600; margin-bottom:1rem; }
     .step-content h3 { color:#333; font-size:1.5rem; font-weight:600; margin:1.5rem 0 .5rem; }
+
     .step-content p{margin-bottom:1rem;line-height:1.8}
 
-    /* Responsive media pattern */
+    /* --- Responsive media pattern --- */
     img.responsive-img { display:block; max-width:100%; height:auto; }
     figure.media {
-      margin:1.25rem auto;
-      max-width:1200px;
-      padding:0 1rem;
+      margin:1.25rem auto;       /* center on page */
+      max-width:1200px;          /* keep readable line length */
+      padding:0 1rem;            /* small gutter on mobile */
     }
+    /* temporary: paint behind any transparent pixels */
+    .infographic-img { background-color:#6b4a2b; border-radius:8px; }
 
+    /* Grey placeholder box (kept for your mock screenshot) */
     .step-placeholder {
       width:100%; height:200px;
       background:linear-gradient(45deg,#f0f0f0,#e0e0e0);
@@ -157,15 +164,17 @@
       <section id="panel-1" class="tab-content step-content" role="tabpanel" aria-labelledby="tab-1" hidden>
         <h2 class="indent" style="margin-left:10rem;">Instructions</h2>
 
+        <!-- Centered, responsive figure -->
         <figure class="media" aria-describedby="infographic-desc">
           <img
-            class="responsive-img"
+            class="responsive-img infographic-img"
             src="album-creation-photoshop.png"
             alt="Infographic showing steps for design creation, template application, adaptation, layout confirmation, and export in Photoshop."
             width="1200" height="1200"
             loading="lazy" decoding="async">
         </figure>
 
+        <!-- Long description for screen readers -->
         <div id="infographic-desc" class="visually-hidden">
           The infographic includes a dark blue title bar, then five labeled steps:
           1) Create your design.
@@ -178,7 +187,62 @@
         <p class="indent" style="margin-left:10rem;margin-right:10rem;">
           It’s time to bring an album design plan to life. You might choose to apply previously developed concepts, resources, and layouts from previous work. If you don’t have an immediate album design prepared, that’s okay! Gather some quick photos and graphics to apply to this exercise*. You may also choose to use the sample content provided in the learning resources of the module. The goal is to practice fitting content into an album template.
         </p>
-        <!-- ... rest of your module content stays unchanged ... -->
+        <p class="indent p-tight-after" style="margin-left:10rem;margin-right:10rem;">
+          Begin by opening Photoshop and ensuring that you have the correct dimensions for your final album output. For print production, you will need to work with a professional printshop that provides album printing services. Printshops will provide specifications via a template. Follow the criteria for content placement based on your design plan. Reach out to the printshop as needed to clarify:
+        </p>
+        <ul class="indent" style="margin-left:10rem;margin-right:10rem;">
+          <li>Preferred dimensions</li>
+          <li>Color modes and resolution</li>
+          <li>Borders, boundaries and bleed areas</li>
+        </ul>
+        <p class="indent" style="margin-left:10rem;margin-right:10rem;">
+          Once your dimensions and template are confirmed you are ready to begin adding resources and text. Graphic design is both a science and an art. Even this far into the implementation of a design plan, it’s okay to make adjustments. New ideas might be generated during the creation phase, so it’s okay to continue experimenting with your design. It’s important to reference your plan while continuing to explore the creative design process.</p>
+        <p class="indent p-tight-after" style="margin-left:10rem;margin-right:10rem;">If needed, reference the choices you made in during your design creation to:</p>
+        <ul class="indent" style="margin-left:10rem;margin-right:10rem;">
+          <li>Stylize fonts</li>
+          <li>Color correct images</li>
+          <li>Apply appropriate graphic design techniques*:
+            <ul class="indent" style="margin-left:2rem;margin-right:2rem;">
+              <li>Layering</li>
+              <li>Transparency</li>
+              <li>Borders</li>
+              <li>Filters</li>
+              <li>Effects: Gradients, blending, color overlay, clipping mask, dropshadow, bevel, emboss etc.</li>
+            </ul>
+          </li>
+        </ul>
+        <p class="indent" style="margin-left:10rem;margin-right:10rem;">
+          <em>*Note</em>: If you choose to use images that aren’t yours, carefully review licensing, attribution and acceptable use requirements. Even for non-commercial personal use, it’s important to adhere to these criteria. Content sharing sites such as Creative Commons outline these use cases and restrictions on their About CC Licenses Page. When in doubt, seek clarification or use content you created.
+        </p>
+        <p class="indent" style="margin-left:10rem;margin-right:10rem;">
+          <em>*Note</em>: Remember to follow many of the rules of general graphic design while also adhering to the creative vision you’ve developed. Remember to also apply universal design principles to ensure that your art is accessible. Even with creative work, it’s important to prioritize color contrast, legible fonts and logical structure. Adhering to these principles will add value to your final product.
+        </p>
+        <p class="indent" style="margin-left:10rem;margin-right:10rem;">
+          Once your content is added, ensure that the layout is both visually appealing and intuitive. Is the front cover oriented to match the back cover and album interiors? Confirm that all images and text are appropriately placed within the template guidelines. You are now ready to save your layout and export the file to provide to the printing company! 
+        </p>
+        <p class="indent" style="margin-left:10rem;margin-right:10rem;">
+          Most printing company offer proofing options before printing, so be sure to check on your options to confirm before printing large batches.
+        </p>
+
+        <h3 class="indent" style="margin-left:10rem;">Key Concepts</h3>
+        <ul class="indent" style="margin-left:10rem;margin-right:10rem;">
+          <li>Verify template criteria</li>
+          <li>Apply graphic design principles and techniques</li>
+          <li>Adhere to accessibility considerations</li>
+          <li>Adjust and revise your plan as needed during the creative process</li>
+          <li>Save and export your final design for delivery</li>
+        </ul>
+
+        <h3 class="indent" style="margin-left:10rem;">Learning Resources</h3>
+        <ul class="indent" style="margin-left:10rem;margin-right:10rem;">
+          <li><a href="#">Photoshop Document Template (PSD)</a></li>
+          <li><a href="#">Platform Size Requirements Guide</a></li>
+        </ul>
+
+        <h3 class="indent" style="margin-left:10rem;">Module Deliverable</h3>
+        <p class="indent" style="margin-left:10rem;margin-right:10rem;">
+          Upon completion of this module, you will have a finalized Photoshop album cover design that is ready for production.
+        </p>
 
         <div class="step-placeholder" style="margin-left:10rem;margin-right:10rem;width:auto;max-width:100%;">[Screenshot: Photoshop New Document Dialog]</div>
       </section>
