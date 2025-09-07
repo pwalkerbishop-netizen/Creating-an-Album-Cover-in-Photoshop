@@ -14,30 +14,35 @@
       white-space: nowrap;
       border: 0; padding: 0; margin: -1px;
     }
-
     *{margin:0;padding:0;box-sizing:border-box}
     body{font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;line-height:1.6;color:#333;background-color:#f8f9fa}
 
     /* Space AFTER lists (not before) */
     .step-content ul,
-    .step-content ol{ margin:0 0 1rem 0; }
+    .step-content ol{
+      margin: 0 0 1rem 0;  /* bottom space only */
+    }
+    /* If a list is the last thing, remove the trailing space */
     .step-content ul:last-child,
-    .step-content ol:last-child{ margin-bottom:0; }
-
+    .step-content ol:last-child{
+      margin-bottom: 0;
+    }
     /* Keep lists tight under text/headings (no extra space BEFORE bullets) */
     .step-content p + ul,
     .step-content p + ol,
     .step-content h2 + ul,
     .step-content h2 + ol,
     .step-content h3 + ul,
-    .step-content h3 + ol{ margin-top:0; }
+    .step-content h3 + ol{
+      margin-top: 0;
+    }
 
     /* Site-wide default for lists */
     ol,ul{list-style-position:inside;margin-left:0;padding-left:0}
     ol li,ul li{padding-left:0.25rem;text-indent:0}
 
     /* Utility: tighten only when a paragraph is right before a list */
-    .p-tight-after { margin-bottom:.25rem !important; }
+    .p-tight-after { margin-bottom: .25rem !important; }
 
     .container{max-width:1200px;margin:0 auto;padding:0 20px}
     .skip-link{position:absolute;top:-40px;left:6px;background:#000;color:#fff;padding:8px;text-decoration:none;z-index:1000}
@@ -68,22 +73,30 @@
     .tab-content[hidden]{display:none}
 
     /* Headings */
-    .step-content h2 { color:#333; font-size:2rem; font-weight:600; margin-bottom:1rem; }
-    .step-content h3 { color:#333; font-size:1.5rem; font-weight:600; margin:1.5rem 0 .5rem; }
+    .step-content h2 {
+      color:#333;
+      font-size:2rem;
+      font-weight:600;
+      margin-bottom:1rem;
+    }
+    .step-content h3 {
+      color:#333;
+      font-size:1.5rem;
+      font-weight:600;
+      margin:1.5rem 0 0.5rem;
+    }
 
     .step-content p{margin-bottom:1rem;line-height:1.8}
 
     /* --- Responsive media pattern --- */
     img.responsive-img { display:block; max-width:100%; height:auto; }
-    figure.media {
-      margin:1.25rem auto;       /* center on page */
-      max-width:1200px;          /* keep readable line length */
-      padding:0 1rem;            /* small gutter on mobile */
-    }
-    /* temporary: paint behind any transparent pixels */
-    .infographic-img { background-color:#6b4a2b; border-radius:8px; }
 
-    /* Grey placeholder box (kept for your mock screenshot) */
+    figure.media {
+      margin: 1.25rem auto;          /* center on page */
+      max-width: 1200px;             /* don't get too wide */
+      padding: 0 1rem;               /* a little gutter on small screens */
+    }
+
     .step-placeholder {
       width:100%; height:200px;
       background:linear-gradient(45deg,#f0f0f0,#e0e0e0);
@@ -132,8 +145,9 @@
         <p class="indent" style="text-align:left;margin-bottom:2rem;color:#666;margin-left:10rem;margin-right:10rem;">
          This module provides learners with the resources needed to transform previously created images, graphics and text into an album cover that is ready for print production. This learning experience is self paced and is intended to bridge the gap between the album design process and physical content production.
         </p>
-
+        
         <h2 class="indent" style="margin-left:10rem;">Learning Objectives</h2>
+        <!-- tightened paragraph before list -->
         <p class="indent p-tight-after" style="margin-left:10rem;margin-right:10rem;">At the end of this module, you will be able to:</p>
         <ol class="indent" style="margin-left:10rem;margin-right:10rem;">
           <li>Articulate the primary components of an album cover</li>
@@ -167,7 +181,7 @@
         <!-- Centered, responsive figure -->
         <figure class="media" aria-describedby="infographic-desc">
           <img
-            class="responsive-img infographic-img"
+            class="responsive-img"
             src="album-creation-photoshop.png"
             alt="Infographic showing steps for design creation, template application, adaptation, layout confirmation, and export in Photoshop."
             width="1200" height="1200"
@@ -177,10 +191,10 @@
         <!-- Long description for screen readers -->
         <div id="infographic-desc" class="visually-hidden">
           The infographic includes a dark blue title bar, then five labeled steps:
-          1) Create your design.
-          2) Apply it to the template.
-          3) Adapt to the template.
-          4) Confirm your layout.
+          1) Create your design. 
+          2) Apply it to the template. 
+          3) Adapt to the template. 
+          4) Confirm your layout. 
           5) Export and order your prints.
         </div>
 
