@@ -14,51 +14,67 @@
       white-space: nowrap;
       border: 0; padding: 0; margin: -1px;
     }
-    *{margin:0;padding:0;box-sizing:border-box}
-    body{font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;line-height:1.6;color:#333;background-color:#f8f9fa}
+
+    * { margin:0; padding:0; box-sizing:border-box; }
+
+    body {
+      font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height:1.6;
+      color:#333;
+      background-color:#f8f9fa;
+    }
 
     .step-content ul,
-    .step-content ol{
-      margin: 0 0 1rem 0; 
-    }
+    .step-content ol { margin: 0 0 1rem 0; }
+
     .step-content ul:last-child,
-    .step-content ol:last-child{
-      margin-bottom: 0;
-    }
+    .step-content ol:last-child { margin-bottom: 0; }
+
     .step-content p + ul,
     .step-content p + ol,
     .step-content h2 + ul,
     .step-content h2 + ol,
     .step-content h3 + ul,
-    .step-content h3 + ol{
-      margin-top: 0;
-    }
+    .step-content h3 + ol { margin-top: 0; }
 
-    ol,ul{list-style-position:inside;margin-left:0;padding-left:0}
-    ol li,ul li{padding-left:0.25rem;text-indent:0}
+    ol, ul { list-style-position: inside; margin-left: 0; padding-left: 0; }
+    ol li, ul li { padding-left: 0.25rem; text-indent: 0; }
 
     .p-tight-after { margin-bottom: .25rem !important; }
 
-    .container{max-width:1200px;margin:0 auto;padding:0 20px}
-    .skip-link{position:absolute;top:-40px;left:6px;background:#000;color:#fff;padding:8px;text-decoration:none;z-index:1000}
-    .skip-link:focus{top:6px}
+    .container { max-width:1200px; margin:0 auto; padding:0 20px; }
 
-    header{background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);color:#fff;padding:2rem 0;text-align:center}
-    header h1{font-size:2.5rem;margin-bottom:.5rem}
-    .subtitle{font-size:1.2rem;opacity:.9;margin-bottom:1rem}
+    .skip-link {
+      position:absolute; top:-40px; left:6px;
+      background:#000; color:#fff; padding:8px;
+      text-decoration:none; z-index:1000;
+    }
+    .skip-link:focus { top:6px; }
 
-    main{padding:3rem 0}
+    header {
+      background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);
+      color:#fff; padding:2rem 0; text-align:center;
+    }
+    header h1 { font-size:2.5rem; margin-bottom:.5rem; }
+    .subtitle { font-size:1.2rem; opacity:.9; margin-bottom:1rem; }
 
-    .preview-image{max-width:100%;height:300px;background:linear-gradient(45deg,#f0f0f0,#e0e0e0);border:2px dashed #ccc;display:flex;align-items:center;justify-content:center;margin:2rem 0;border-radius:10px;color:#999;font-size:1.1rem}
+    main { padding:3rem 0; }
 
-    .tab-container{background:#fff;border-radius:10px;box-shadow:0 5px 15px rgba(0,0,0,.1);overflow:hidden;margin:2rem 0}
-    
-    .tab-button:focus-visible {
-  outline: 3px solid #ff8c00;
-  outline-offset: 2px;
-  border-radius: 6px;}
+    .preview-image {
+      max-width:100%; height:300px;
+      background:linear-gradient(45deg,#f0f0f0,#e0e0e0);
+      border:2px dashed #ccc;
+      display:flex; align-items:center; justify-content:center;
+      margin:2rem 0; border-radius:10px; color:#999; font-size:1.1rem;
+    }
 
-    nav.tab-buttons{
+    .tab-container {
+      background:#fff; border-radius:10px;
+      box-shadow:0 5px 15px rgba(0,0,0,.1);
+      overflow:hidden; margin:2rem 0;
+    }
+
+    nav.tab-buttons {
       display:flex;
       background:#f8f9fa;
       border-bottom:1px solid #dee2e6;
@@ -66,40 +82,37 @@
       margin-right:10rem;
     }
 
-.tab-button:hover { background: rgba(102,126,234,.1); }
+    .tab-button {
+      flex:1;
+      padding:1rem;
+      border:none;
+      background:transparent;
+      cursor:pointer;
+      font-weight:500;
+      transition:all .3s ease;
+      color:#666;
+    }
 
-.tab-button:focus-visible{
-  outline: none;
-   
-  border-radius: 8px;
-}
+    .tab-button:hover { background:rgba(102,126,234,.1); }
+    .tab-button.active { background:#667eea; color:#fff; }
 
-.tab-button:focus{
-  outline: none;
-  
-  border-radius: 8px;}
-    .tab-button{flex:1;padding:1rem;border:none;background:transparent;cursor:pointer;font-weight:500;transition:all .3s ease;color:#666}
-    .tab-button:hover{background:rgba(102,126,234,.1)}
-    .tab-button.active{background:#667eea;color:#fff}
+    .tab-button:focus,
+    .tab-button:focus-visible {
+      outline:2px solid #000;
+      outline-offset:2px;
+      border-radius:6px;
+    }
 
-    .tab-content{display:block;padding:2rem}
-    .tab-content[hidden]{display:none}
+    .tab-content { display:block; padding:2rem; }
+    .tab-content[hidden] { display:none; }
 
-    /* Headings */
     .step-content h2 {
-      color:#333;
-      font-size:2rem;
-      font-weight:600;
-      margin-bottom:1rem;
+      color:#333; font-size:2rem; font-weight:600; margin-bottom:1rem;
     }
     .step-content h3 {
-      color:#333;
-      font-size:1.5rem;
-      font-weight:600;
-      margin:1.5rem 0 0.5rem;
+      color:#333; font-size:1.5rem; font-weight:600; margin:1.5rem 0 0.5rem;
     }
-
-    .step-content p{margin-bottom:1rem;line-height:1.8}
+    .step-content p { margin-bottom:1rem; line-height:1.8; }
 
     img.responsive-img { display:block; max-width:100%; height:auto; }
 
@@ -117,43 +130,55 @@
       margin:1rem 0; color:#999;
     }
 
-    .download-links{background:#f8f9fa;padding:1.5rem;border-radius:8px;margin:1.5rem 0}
-    .download-links h4{margin-bottom:1rem;color:#333}
-    .download-links ul{list-style:none}
-    .download-links li{margin:.5rem 0}
-    .download-links a{color:#667eea;text-decoration:none;padding:.3rem 0;display:inline-block}
-    .download-links a:hover{text-decoration:underline}
+    .download-links { background:#f8f9fa; padding:1.5rem; border-radius:8px; margin:1.5rem 0; }
+    .download-links h4 { margin-bottom:1rem; color:#333; }
+    .download-links ul { list-style:none; }
+    .download-links li { margin:.5rem 0; }
+    .download-links a { color:#667eea; text-decoration:none; padding:.3rem 0; display:inline-block; }
+    .download-links a:hover { text-decoration:underline; }
 
-    footer{background:#333;color:#fff;text-align:center;padding:2rem 0;margin-top:4rem}
-    footer a{color:#667eea}
+    footer { background:#333; color:#fff; text-align:center; padding:2rem 0; margin-top:4rem; }
+    footer a { color:#667eea; }
 
-    .video-wrapper{
-      display:flex;
-      justify-content:center;
-      margin: 1.5rem 0;
-      padding: 0 1rem; 
+    .video-wrapper {
+      display:flex; justify-content:center;
+      margin:1.5rem 0; padding:0 1rem;
     }
-    .video-container{
-      position:relative;
-      width:100%;
-      max-width:960px;
-      aspect-ratio:16/9;
+    .video-container {
+      position:relative; width:100%; max-width:960px; aspect-ratio:16/9;
     }
-    .video-container iframe{
-      position:absolute;
-      inset:0;
-      width:100%;
-      height:100%;
-      border:0;
+    .video-container iframe {
+      position:absolute; inset:0; width:100%; height:100%; border:0;
     }
 
-    details > summary { cursor: pointer; font-weight: 600; }
+    details > summary { cursor:pointer; font-weight:600; }
     details[open] > summary { margin-bottom:.5rem; }
 
+    a:focus,
+    a:focus-visible {
+      outline:2px solid #000;
+      outline-offset:2px;
+      border-radius:2px;
+      text-decoration:none;
+    }
+
+    @media (prefers-reduced-motion: reduce){
+      *{ animation:none !important; transition:none !important; scroll-behavior:auto !important; }
+    }
+
+    @media (forced-colors: active){
+      .tab-button:focus,
+      .tab-button:focus-visible,
+      a:focus,
+      a:focus-visible {
+        outline:2px solid CanvasText;
+      }
+    }
+
     @media (max-width:768px){
-      nav.tab-buttons{flex-wrap:wrap;margin-left:1rem;margin-right:1rem}
-      .tab-button{flex:1 0 50%;min-width:120px}
-      .indent{margin-left:1rem!important;margin-right:1rem!important}
+      nav.tab-buttons { flex-wrap:wrap; margin-left:1rem; margin-right:1rem; }
+      .tab-button { flex:1 0 50%; min-width:120px; }
+      .indent { margin-left:1rem !important; margin-right:1rem !important; }
     }
   </style>
 </head>
@@ -178,7 +203,7 @@
       <section id="panel-0" class="tab-content step-content" role="tabpanel" aria-labelledby="tab-0" aria-describedby="course-content-intro">
         <h2 id="course-content-intro" class="indent" style="margin-left:10rem;">Introduction and Overview</h2>
         <p class="indent" style="text-align:left;margin-bottom:2rem;color:#666;margin-left:10rem;margin-right:10rem;">
-         This module provides learners with the resources needed to transform previously created images, graphics and text into an album cover that is ready for print production. This learning experience is self paced and is intended to bridge the gap between the album design process and physical content production.
+          This module provides learners with the resources needed to transform previously created images, graphics and text into an album cover that is ready for print production. This learning experience is self paced and is intended to bridge the gap between the album design process and physical content production.
         </p>
         
         <h2 class="indent" style="margin-left:10rem;">Learning Objectives</h2>
@@ -192,10 +217,10 @@
 
         <h3 class="indent" style="margin-left:10rem;">Audience and Prior Learning Expectations</h3>
         <p class="indent" style="margin-left:10rem;margin-right:10rem;">
-          This micro-learning experience is intended for learners with a basic understanding of Photoshop and general graphic design principles. Participants should have access to Photoshop and the basic components (i.e. images, graphics and text) of an album cover. Concepts such as concept planning, gathering resources, content design and layout planning have been addressed in previous modules.
+          This micro-learning experience is intended for learners with a basic understanding of Photoshop and general graphic design principles. Participants should have access to Photoshop and the basic components (i.e. images, graphics and text) of an album cover. Concepts such as concept planning, gathering resources, content design and layout planning are not covered in this module.
         </p>
         <p class="indent" style="margin-left:10rem;margin-right:10rem;">
-          You should have already acquired or be prepared to aquire the primary components of your album cover prior to beginning this module. Photoshop skills, such as color correction, layering, transparency, borders, filters, effects, gradients, blending, color overlay, clipping mask, dropshadow, bevel, emboss etc. will not be addressed.
+          You should have already acquired or be prepared to acquire the primary components of your album cover prior to beginning this module. Photoshop skills, such as color correction, layering, transparency, borders, filters, effects, gradients, blending, color overlay, clipping mask, dropshadow, bevel, emboss etc. will not be addressed.
         </p>
         <p class="indent p-tight-after" style="margin-left:10rem;margin-right:10rem;">
           Please reference the following hardware and software requirements:
@@ -215,7 +240,9 @@
         <p class="indent" style="margin-left:10rem;margin-right:10rem;">
           It’s time to bring an album design plan to life. You might choose to apply previously developed concepts, resources, and layouts from previous work. If you don’t have an immediate album design prepared, that’s okay! Gather some quick photos and graphics to apply to this exercise. You may also choose to use the sample content provided in the learning resources of the module. The goal is to practice fitting content into an album template.
         </p>
-        <figure role="group" aria-labelledby="vid1-title" aria-describedby="vid1-desc">
+
+        <!-- Centered, accessible video -->
+        <figure aria-labelledby="vid1-title" aria-describedby="vid1-desc">
           <figcaption id="vid1-title" class="visually-hidden">
             Micro-learning video: Album Cover Template Usage in Adobe Photoshop
           </figcaption>
@@ -238,7 +265,14 @@
           </div>
 
           <p style="text-align:center; margin-top:.5rem;">
-            Prefer YouTube? <a href="https://www.youtube.com/watch?v=rlbkfcxr3v0" target="_blank" rel="noopener noreferrer">Open the video in a new tab</a>.
+            Prefer YouTube?
+            <a href="https://www.youtube.com/watch?v=rlbkfcxr3v0"
+               target="_blank"
+               rel="noopener noreferrer"
+               title="External Link"
+               aria-label="Open the video on YouTube (opens in a new tab)">
+              Open the video in a new tab
+            </a>.
           </p>
 
           <details style="margin:0 auto; max-width:960px; padding:0 1rem; margin-top:.5rem;">
@@ -255,7 +289,13 @@ Hello everyone. Today we're going to apply an album cover design to a Photoshop 
         </figure>
 
         <p class="indent p-tight-after" style="margin-left:10rem;margin-right:10rem;">
-          Begin by opening Photoshop and ensuring that you have the correct dimensions for your final album output. For print production, you will need to work with a professional printshop that provides album printing services. Printshops will provide specifications via a template. Follow the criteria for content placement based on your design plan. Reach out to the printshop as needed to clarify:
+          Begin by opening Photoshop and ensuring that you have the correct dimensions for your final album output. For print production, you will need to work with a professional printshop that provides album printing services. Printshops will provide specifications via a template. Follow the criteria for content placement based on your design plan. Reference
+          <a href="http://throughthelensprod.blogspot.com/2017/01/digipak-first-stages.html"
+             target="_blank"
+             rel="noopener noreferrer"
+             title="External Link"
+             aria-label="DigiPak: First Stages (opens in a new tab)">DigiPak: First Stages</a>
+          provided in the module Learning Resources. Reach out to the printshop as needed to clarify:
         </p>
         <ul class="indent" style="margin-left:10rem;margin-right:10rem;">
           <li>Preferred dimensions</li>
@@ -263,7 +303,8 @@ Hello everyone. Today we're going to apply an album cover design to a Photoshop 
           <li>Borders, boundaries and bleed areas</li>
         </ul>
         <p class="indent" style="margin-left:10rem;margin-right:10rem;">
-          Once your dimensions and template are confirmed you are ready to begin adding resources and text. Graphic design is both a science and an art. Even this far into the implementation of a design plan, it’s okay to make adjustments. New ideas might be generated during the creation phase, so it’s okay to continue experimenting with your design. It’s important to reference your plan while continuing to explore the creative design process.</p>
+          Once your dimensions and template are confirmed you are ready to begin adding resources and text. Graphic design is both a science and an art. Even this far into the implementation of a design plan, it’s okay to make adjustments. New ideas might be generated during the creation phase, so it’s okay to continue experimenting with your design. It’s important to reference your plan while continuing to explore the creative design process.
+        </p>
         <p class="indent p-tight-after" style="margin-left:10rem;margin-right:10rem;">If needed, reference the choices you made in during your design creation to:</p>
         <ul class="indent" style="margin-left:10rem;margin-right:10rem;">
           <li>Stylize fonts</li>
@@ -279,10 +320,22 @@ Hello everyone. Today we're going to apply an album cover design to a Photoshop 
           </li>
         </ul>
         <p class="indent" style="margin-left:10rem;margin-right:10rem;">
-          If you choose to use images that aren’t yours, carefully review licensing, attribution and acceptable use requirements. Even for non-commercial personal use, it’s important to adhere to these criteria. Content sharing sites such as Creative Commons outline these use cases and restrictions on their About CC Licenses Page. When in doubt, seek clarification or use content you created.
+          If you choose to use images that aren’t yours, carefully review licensing, attribution and acceptable use requirements. Even for non-commercial personal use, it’s important to adhere to these criteria. Content sharing sites such as
+          <a href="https://creativecommons.org/"
+             target="_blank"
+             rel="noopener noreferrer"
+             title="External Link"
+             aria-label="Creative Commons website (opens in a new tab)">Creative Commons</a>
+          outline these use cases and restrictions on their
+          <a href="https://creativecommons.org/share-your-work/cclicenses/"
+             target="_blank"
+             rel="noopener noreferrer"
+             title="External Link"
+             aria-label="About CC Licenses (opens in a new tab)">About CC Licenses page</a>.
+          When in doubt, seek clarification or use content you created.
         </p>
         <p class="indent" style="margin-left:10rem;margin-right:10rem;">
-           Remember to follow many of the rules of general graphic design while also adhering to the creative vision you’ve developed. Remember to also apply universal design principles to ensure that your art is accessible. Even with creative work, it’s important to prioritize color contrast, legible fonts and logical structure. Adhering to these principles will add value to your final product.
+          Remember to follow the rules of general graphic design while also adhering to the creative vision you’ve developed. Remember to also apply universal design principles to ensure that your art is accessible. Even with creative work, it’s important to prioritize color contrast, legible fonts and logical structure. Adhering to these principles will add value to your final product.
         </p>
         <p class="indent" style="margin-left:10rem;margin-right:10rem;">
           Once your content is added, ensure that the layout is both visually appealing and intuitive. Is the front cover oriented to match the back cover and album interiors? Confirm that all images and text are appropriately placed within the template guidelines. You are now ready to save your layout and export the file to provide to the printing company! 
@@ -302,62 +355,61 @@ Hello everyone. Today we're going to apply an album cover design to a Photoshop 
 
         <h3 class="indent" style="margin-left:10rem;">Learning Resources</h3>
         <ul class="indent" style="margin-left:10rem;margin-right:10rem;">
-  <li>
-    <a href="https://drive.google.com/drive/folders/1LTNDBL6GfURfGQh2D6bmBbX9au4lE4qt?usp=sharing"
-       target="_blank"
-       rel="noopener noreferrer"
-       title="External Link"
-       aria-label="Sample Photoshop Document Templates (opens in a new tab)">
-      Sample Photoshop Document Templates (PSD)
-    </a>
-  </li>
-  <li>
-    <a href="https://support.discmakers.com/hc/en-us/articles/209098677--Using-our-Templates-with-Adobe-Photoshop"
-       target="_blank"
-       rel="noopener noreferrer"
-       title="External Link"
-       aria-label="Using Our Templates with Adobe Photoshop (opens in a new tab)">
-      Using Our Templates with Adobe Photoshop
-    </a>
-  </li>
-  <li>
-    <a href="http://throughthelensprod.blogspot.com/2017/01/digipak-first-stages.html"
-       target="_blank"
-       rel="noopener noreferrer"
-       title="External Link"
-       aria-label="DigiPak: First Stages (opens in a new tab)">
-      DigiPak: First Stages
-    </a>
-  </li>
-  <li>
-    <a href="https://www.discmakers.com/templates/digipaks.asp"
-       target="_blank"
-       rel="noopener noreferrer"
-       title="External Link"
-       aria-label="Digipak Templates (opens in a new tab)">
-      Digipak Templates
-    </a>
-  </li>
-  <li>
-    <a href="https://pixflow.net/blog/how-to-create-high-quality-book-covers-album-art-with-photoshop-templates/"
-       target="_blank"
-       rel="noopener noreferrer"
-       title="External Link"
-       aria-label="How to Create High-Quality Book Covers & Album Art with Photoshop Templates (opens in a new tab)">
-      How to Create High-Quality Book Covers & Album Art with Photoshop Templates
-    </a>
-  </li>
-  <li>
-    <a href="https://youtu.be/RkKcgrUNRaI?t=313"
-       target="_blank"
-       rel="noopener noreferrer"
-       title="External Link"
-       aria-label="Does Accessibility Apply to Print Design? (opens in a new tab)">
-      Does Accessibility Apply to Print Design?
-    </a>
-  </li>
-</ul>
-
+          <li>
+            <a href="https://drive.google.com/drive/folders/1LTNDBL6GfURfGQh2D6bmBbX9au4lE4qt?usp=sharing"
+               target="_blank"
+               rel="noopener noreferrer"
+               title="External Link"
+               aria-label="Sample Photoshop Document Templates (opens in a new tab)">
+              Sample Photoshop Document Templates (PSD)
+            </a>
+          </li>
+          <li>
+            <a href="https://support.discmakers.com/hc/en-us/articles/209098677--Using-our-Templates-with-Adobe-Photoshop"
+               target="_blank"
+               rel="noopener noreferrer"
+               title="External Link"
+               aria-label="Using Our Templates with Adobe Photoshop (opens in a new tab)">
+              Using Our Templates with Adobe Photoshop
+            </a>
+          </li>
+          <li>
+            <a href="http://throughthelensprod.blogspot.com/2017/01/digipak-first-stages.html"
+               target="_blank"
+               rel="noopener noreferrer"
+               title="External Link"
+               aria-label="DigiPak: First Stages (opens in a new tab)">
+              DigiPak: First Stages
+            </a>
+          </li>
+          <li>
+            <a href="https://www.discmakers.com/templates/digipaks.asp"
+               target="_blank"
+               rel="noopener noreferrer"
+               title="External Link"
+               aria-label="Digipak Templates (opens in a new tab)">
+              Digipak Templates
+            </a>
+          </li>
+          <li>
+            <a href="https://pixflow.net/blog/how-to-create-high-quality-book-covers-album-art-with-photoshop-templates/"
+               target="_blank"
+               rel="noopener noreferrer"
+               title="External Link"
+               aria-label="How to Create High-Quality Book Covers & Album Art with Photoshop Templates (opens in a new tab)">
+              How to Create High-Quality Book Covers & Album Art with Photoshop Templates
+            </a>
+          </li>
+          <li>
+            <a href="https://youtu.be/RkKcgrUNRaI?t=313"
+               target="_blank"
+               rel="noopener noreferrer"
+               title="External Link"
+               aria-label="Does Accessibility Apply to Print Design? (opens in a new tab)">
+              Does Accessibility Apply to Print Design?
+            </a>
+          </li>
+        </ul>
 
         <h3 class="indent" style="margin-left:10rem;">Module Deliverable</h3>
         <p class="indent" style="margin-left:10rem;margin-right:10rem;">
@@ -371,14 +423,9 @@ Hello everyone. Today we're going to apply an album cover design to a Photoshop 
             alt="Infographic showing steps for design creation, template application, adaptation, layout confirmation, and export in Photoshop."
             width="1200" height="1200"
             loading="lazy" decoding="async">
-              <div id="infographic-desc" class="visually-hidden">
-          The infographic includes a dark blue title bar, then five labeled steps:
-          1) Create your design. 
-          2) Apply it to the template. 
-          3) Adapt to the template. 
-          4) Confirm your layout. 
-          5) Export and order your prints.
-        </div>
+          <div id="infographic-desc" class="visually-hidden">
+            The image is an instructional graphic titled "Album Creation from a Photoshop Template." The background is divided into two sections: a dark blue top section and a beige bottom section. The top section contains the title in large white text. Below, on the beige background, there are four icons with accompanying text, each within individual rounded rectangles. From left to right, the first icon is a lightbulb above the words "Create Your Design." The second is a document icon with lines and squares, labeled "Apply it to the Template." The third icon is a person raising their arms, with the words "Adapt to the Template." The fourth icon features a paper and pen, annotated with "Confirm Your Layout." At the bottom, a larger rounded rectangle contains an icon of a printer and the words "Export and Order Your Prints!" in bold black text.
+          </div>
         </figure>
       </section>
     </div>
@@ -410,7 +457,6 @@ Hello everyone. Today we're going to apply an album cover design to a Photoshop 
       tabs[i].focus();
     }
 
-    // Keyboard enhancements for tabs: Left/Right + Home/End + Enter/Space
     document.addEventListener('keydown', e => {
       const isTab = e.target.getAttribute('role') === 'tab';
       if(!isTab) return;
