@@ -17,17 +17,14 @@
     *{margin:0;padding:0;box-sizing:border-box}
     body{font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;line-height:1.6;color:#333;background-color:#f8f9fa}
 
-    /* Space AFTER lists (not before) */
     .step-content ul,
     .step-content ol{
-      margin: 0 0 1rem 0;  /* bottom space only */
+      margin: 0 0 1rem 0; 
     }
-    /* If a list is the last thing, remove the trailing space */
     .step-content ul:last-child,
     .step-content ol:last-child{
       margin-bottom: 0;
     }
-    /* Keep lists tight under text/headings (no extra space BEFORE bullets) */
     .step-content p + ul,
     .step-content p + ol,
     .step-content h2 + ul,
@@ -37,11 +34,9 @@
       margin-top: 0;
     }
 
-    /* Site-wide default for lists */
     ol,ul{list-style-position:inside;margin-left:0;padding-left:0}
     ol li,ul li{padding-left:0.25rem;text-indent:0}
 
-    /* Utility: tighten only when a paragraph is right before a list */
     .p-tight-after { margin-bottom: .25rem !important; }
 
     .container{max-width:1200px;margin:0 auto;padding:0 20px}
@@ -91,11 +86,11 @@
     /* --- Responsive media pattern --- */
     img.responsive-img { display:block; max-width:100%; height:auto; }
 
-figure.media {
-  margin: 1.25rem auto;
-  max-width: var(--media-w, 1200px); /* default stays 1200 unless overridden */
-  padding: 0 1rem;
-}
+    figure.media {
+      margin: 1.25rem auto;
+      max-width: var(--media-w, 1200px);
+      padding: 0 1rem;
+    }
 
     .step-placeholder {
       width:100%; height:200px;
@@ -114,6 +109,27 @@ figure.media {
 
     footer{background:#333;color:#fff;text-align:center;padding:2rem 0;margin-top:4rem}
     footer a{color:#667eea}
+
+    /* --- Centered video embed --- */
+    .video-wrapper{
+      display:flex;
+      justify-content:center;
+      margin: 1.5rem 0;
+      padding: 0 1rem; /* small side breathing room on mobile */
+    }
+    .video-container{
+      position:relative;
+      width:100%;
+      max-width:960px;
+      aspect-ratio:16/9;
+    }
+    .video-container iframe{
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+      border:0;
+    }
 
     @media (max-width:768px){
       nav.tab-buttons{flex-wrap:wrap;margin-left:1rem;margin-right:1rem}
@@ -147,7 +163,6 @@ figure.media {
         </p>
         
         <h2 class="indent" style="margin-left:10rem;">Learning Objectives</h2>
-        <!-- tightened paragraph before list -->
         <p class="indent p-tight-after" style="margin-left:10rem;margin-right:10rem;">At the end of this module, you will be able to:</p>
         <ol class="indent" style="margin-left:10rem;margin-right:10rem;">
           <li>Articulate the primary components of an album cover</li>
@@ -177,27 +192,40 @@ figure.media {
       <!-- Micro-learning Module  -->
       <section id="panel-1" class="tab-content step-content" role="tabpanel" aria-labelledby="tab-1" hidden>
         <h2 class="indent" style="margin-left:10rem;">Instructions</h2>
-<div class="indent" style="margin-left:10rem;margin-right:10rem;">
-  <figure role="group" aria-labelledby="vid1-title" aria-describedby="vid1-desc">
 
-    <div style="position:relative;width:100%;max-width:960px;aspect-ratio:16/9;">
-      <iframe
-        src="https://www.youtube-nocookie.com/embed/rlbkfcxr3v0?rel=0&cc_load_policy=1"
-        title="Descriptive video title (what learners will see/learn)"
-        loading="lazy"
-        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowfullscreen
-        referrerpolicy="strict-origin-when-cross-origin"
-        style="position:absolute;inset:0;border:0;width:100%;height:100%;"
-      ></iframe>
-    </div>
-        <figure class="media" style="--media-w: 800px;" aria-describedby="infographic-desc">
-          <img
-            class="responsive-img"
-            src="album-creation-photoshop.png"
-            alt="Infographic showing steps for design creation, template application, adaptation, layout confirmation, and export in Photoshop."
-            width="1200" height="1200"
-            loading="lazy" decoding="async">
+        <!-- Centered, accessible video (not indented, so it centers on the page) -->
+        <figure role="group" aria-labelledby="vid1-title" aria-describedby="vid1-desc">
+          <figcaption id="vid1-title" class="visually-hidden">
+            Micro-learning video: Album Cover Template Usage in Adobe Photoshop
+          </figcaption>
+          <p id="vid1-desc" class="visually-hidden">
+            Demonstration of loading a printshop template in Photoshop and fitting album cover content into the layout. Captions available. Transcript below.
+          </p>
+
+          <div class="video-wrapper">
+            <div class="video-container">
+              <iframe
+                src="https://www.youtube-nocookie.com/embed/rlbkfcxr3v0?rel=0&cc_load_policy=1"
+                title="Album Cover Template Usage in Adobe Photoshop — demonstration"
+                loading="lazy"
+                allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+                referrerpolicy="strict-origin-when-cross-origin"
+              ></iframe>
+            </div>
+          </div>
+
+          <p style="text-align:center; margin-top:.5rem;">
+            Prefer YouTube? <a href="https://www.youtube.com/watch?v=rlbkfcxr3v0" target="_blank" rel="noopener">Open the video in a new tab</a>.
+          </p>
+
+          <details style="margin:0 auto; max-width:960px; padding:0 1rem; margin-top:.5rem;">
+            <summary>Transcript</summary>
+            <div>
+              <p><strong>Speaker:</strong> [Add name]</p>
+              <p>[Paste the edited transcript here, including descriptions of essential on-screen actions/graphics.]</p>
+            </div>
+          </details>
         </figure>
 
         <div id="infographic-desc" class="visually-hidden">
@@ -269,7 +297,14 @@ figure.media {
           Upon completion of this module, you will have a finalized Photoshop album cover design that is ready for production.
         </p>
 
-        <div class="step-placeholder" style="margin-left:10rem;margin-right:10rem;width:auto;max-width:100%;">[Screenshot: Photoshop New Document Dialog]</div>
+        <figure class="media" style="--media-w: 800px;" aria-describedby="infographic-desc">
+          <img
+            class="responsive-img"
+            src="album-creation-photoshop.png"
+            alt="Infographic showing steps for design creation, template application, adaptation, layout confirmation, and export in Photoshop."
+            width="1200" height="1200"
+            loading="lazy" decoding="async">
+        </figure>
       </section>
     </div>
   </main>
