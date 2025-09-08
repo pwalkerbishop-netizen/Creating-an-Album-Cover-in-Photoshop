@@ -52,6 +52,11 @@
     .preview-image{max-width:100%;height:300px;background:linear-gradient(45deg,#f0f0f0,#e0e0e0);border:2px dashed #ccc;display:flex;align-items:center;justify-content:center;margin:2rem 0;border-radius:10px;color:#999;font-size:1.1rem}
 
     .tab-container{background:#fff;border-radius:10px;box-shadow:0 5px 15px rgba(0,0,0,.1);overflow:hidden;margin:2rem 0}
+    
+    .tab-button:focus-visible {
+  outline: 3px solid #ff8c00;
+  outline-offset: 2px;
+  border-radius: 6px;}
 
     nav.tab-buttons{
       display:flex;
@@ -60,6 +65,22 @@
       margin-left:10rem;
       margin-right:10rem;
     }
+    
+    /* Keep the hover you already have */
+.tab-button:hover { background: rgba(102,126,234,.1); }
+
+/* Show a ring for keyboard users */
+.tab-button:focus-visible{
+  outline: none;
+   
+  border-radius: 8px;
+}
+
+/* ALSO show the same ring when focused by mouse */
+.tab-button:focus{
+  outline: none;
+  
+  border-radius: 8px;}
     .tab-button{flex:1;padding:1rem;border:none;background:transparent;cursor:pointer;font-weight:500;transition:all .3s ease;color:#666}
     .tab-button:hover{background:rgba(102,126,234,.1)}
     .tab-button.active{background:#667eea;color:#fff}
@@ -83,7 +104,6 @@
 
     .step-content p{margin-bottom:1rem;line-height:1.8}
 
-    /* --- Responsive media pattern --- */
     img.responsive-img { display:block; max-width:100%; height:auto; }
 
     figure.media {
@@ -110,12 +130,11 @@
     footer{background:#333;color:#fff;text-align:center;padding:2rem 0;margin-top:4rem}
     footer a{color:#667eea}
 
-    /* --- Centered video embed --- */
     .video-wrapper{
       display:flex;
       justify-content:center;
       margin: 1.5rem 0;
-      padding: 0 1rem; /* small side breathing room on mobile */
+      padding: 0 1rem; 
     }
     .video-container{
       position:relative;
@@ -130,6 +149,9 @@
       height:100%;
       border:0;
     }
+
+    details > summary { cursor: pointer; font-weight: 600; }
+    details[open] > summary { margin-bottom:.5rem; }
 
     @media (max-width:768px){
       nav.tab-buttons{flex-wrap:wrap;margin-left:1rem;margin-right:1rem}
@@ -150,7 +172,7 @@
 
   <main id="main-content" tabindex="-1">
     <div class="tab-container">
-      <nav class="tab-buttons" role="tablist" aria-label="Course modules">
+      <nav class="tab-buttons" role="tablist" aria-label="Course modules" aria-orientation="horizontal">
         <button id="tab-0" class="tab-button active" role="tab" aria-controls="panel-0" aria-selected="true" tabindex="0" onclick="showTab(0)">Start Here</button>
         <button id="tab-1" class="tab-button" role="tab" aria-controls="panel-1" aria-selected="false" tabindex="-1" onclick="showTab(1)">Micro-learning Module</button>
       </nav>
@@ -193,13 +215,15 @@
       <section id="panel-1" class="tab-content step-content" role="tabpanel" aria-labelledby="tab-1" hidden>
         <h2 class="indent" style="margin-left:10rem;">Instructions</h2>
 
-        <!-- Centered, accessible video (not indented, so it centers on the page) -->
+        <p class="indent" style="margin-left:10rem;margin-right:10rem;">
+          It’s time to bring an album design plan to life. You might choose to apply previously developed concepts, resources, and layouts from previous work. If you don’t have an immediate album design prepared, that’s okay! Gather some quick photos and graphics to apply to this exercise. You may also choose to use the sample content provided in the learning resources of the module. The goal is to practice fitting content into an album template.
+        </p>
         <figure role="group" aria-labelledby="vid1-title" aria-describedby="vid1-desc">
           <figcaption id="vid1-title" class="visually-hidden">
             Micro-learning video: Album Cover Template Usage in Adobe Photoshop
           </figcaption>
           <p id="vid1-desc" class="visually-hidden">
-            Demonstration of loading a printshop template in Photoshop and fitting album cover content into the layout. Captions available. Transcript below.
+            Demonstration of working with a printshop template in Photoshop and fitting album cover content into the layout. The speaker introduces the video and transitions to screen recordings showing a Photoshop template with American style music playing in the background by the Hibbs Family Band. Images, graphics, and text are added to the template and edited to fit. Color correction, graphic, and text edits are also demonstrated. Captions available. Transcript below.
           </p>
 
           <div class="video-wrapper">
@@ -207,6 +231,7 @@
               <iframe
                 src="https://www.youtube-nocookie.com/embed/rlbkfcxr3v0?rel=0&cc_load_policy=1"
                 title="Album Cover Template Usage in Adobe Photoshop — demonstration"
+                aria-describedby="vid1-desc"
                 loading="lazy"
                 allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowfullscreen
@@ -216,30 +241,22 @@
           </div>
 
           <p style="text-align:center; margin-top:.5rem;">
-            Prefer YouTube? <a href="https://www.youtube.com/watch?v=rlbkfcxr3v0" target="_blank" rel="noopener">Open the video in a new tab</a>.
+            Prefer YouTube? <a href="https://www.youtube.com/watch?v=rlbkfcxr3v0" target="_blank" rel="noopener noreferrer">Open the video in a new tab</a>.
           </p>
 
           <details style="margin:0 auto; max-width:960px; padding:0 1rem; margin-top:.5rem;">
             <summary>Transcript</summary>
             <div>
-              <p><strong>Speaker:</strong> [Add name]</p>
-              <p>[Paste the edited transcript here, including descriptions of essential on-screen actions/graphics.]</p>
+              <p><strong>Speaker:</strong> Philip Bishop</p>
+              <p>[Music Playing]
+
+Hello everyone. Today we're going to apply an album cover design to a Photoshop template. Here's the plan. We'll gather your completed resources, apply them to the template, make adjustments where needed, confirm the layout, and prepare everything for export and printing. So, let's jump right in and get started. Now we've got Photoshop open and we've loaded the template for our album cover. In this case, we're using the template provided by the print production company. As you add content, be sure to follow the instructions provided in the legend or other areas of your template. Remember, it's okay to make adjustments to things like background color, text placement, and font color. Be sure to make adjustments based on the guidelines and ensure that all of your content fits safely within them. And that's it. You've applied your album cover design to a Photoshop template. Your project is polished and ready for production.
+
+[Music Playing]</p>
             </div>
           </details>
         </figure>
 
-        <div id="infographic-desc" class="visually-hidden">
-          The infographic includes a dark blue title bar, then five labeled steps:
-          1) Create your design. 
-          2) Apply it to the template. 
-          3) Adapt to the template. 
-          4) Confirm your layout. 
-          5) Export and order your prints.
-        </div>
-
-        <p class="indent" style="margin-left:10rem;margin-right:10rem;">
-          It’s time to bring an album design plan to life. You might choose to apply previously developed concepts, resources, and layouts from previous work. If you don’t have an immediate album design prepared, that’s okay! Gather some quick photos and graphics to apply to this exercise*. You may also choose to use the sample content provided in the learning resources of the module. The goal is to practice fitting content into an album template.
-        </p>
         <p class="indent p-tight-after" style="margin-left:10rem;margin-right:10rem;">
           Begin by opening Photoshop and ensuring that you have the correct dimensions for your final album output. For print production, you will need to work with a professional printshop that provides album printing services. Printshops will provide specifications via a template. Follow the criteria for content placement based on your design plan. Reach out to the printshop as needed to clarify:
         </p>
@@ -254,7 +271,7 @@
         <ul class="indent" style="margin-left:10rem;margin-right:10rem;">
           <li>Stylize fonts</li>
           <li>Color correct images</li>
-          <li>Apply appropriate graphic design techniques*:
+          <li>Apply appropriate graphic design techniques:
             <ul class="indent" style="margin-left:2rem;margin-right:2rem;">
               <li>Layering</li>
               <li>Transparency</li>
@@ -265,10 +282,10 @@
           </li>
         </ul>
         <p class="indent" style="margin-left:10rem;margin-right:10rem;">
-          <em>*Note</em>: If you choose to use images that aren’t yours, carefully review licensing, attribution and acceptable use requirements. Even for non-commercial personal use, it’s important to adhere to these criteria. Content sharing sites such as Creative Commons outline these use cases and restrictions on their About CC Licenses Page. When in doubt, seek clarification or use content you created.
+          If you choose to use images that aren’t yours, carefully review licensing, attribution and acceptable use requirements. Even for non-commercial personal use, it’s important to adhere to these criteria. Content sharing sites such as Creative Commons outline these use cases and restrictions on their About CC Licenses Page. When in doubt, seek clarification or use content you created.
         </p>
         <p class="indent" style="margin-left:10rem;margin-right:10rem;">
-          <em>*Note</em>: Remember to follow many of the rules of general graphic design while also adhering to the creative vision you’ve developed. Remember to also apply universal design principles to ensure that your art is accessible. Even with creative work, it’s important to prioritize color contrast, legible fonts and logical structure. Adhering to these principles will add value to your final product.
+           Remember to follow many of the rules of general graphic design while also adhering to the creative vision you’ve developed. Remember to also apply universal design principles to ensure that your art is accessible. Even with creative work, it’s important to prioritize color contrast, legible fonts and logical structure. Adhering to these principles will add value to your final product.
         </p>
         <p class="indent" style="margin-left:10rem;margin-right:10rem;">
           Once your content is added, ensure that the layout is both visually appealing and intuitive. Is the front cover oriented to match the back cover and album interiors? Confirm that all images and text are appropriately placed within the template guidelines. You are now ready to save your layout and export the file to provide to the printing company! 
@@ -288,8 +305,12 @@
 
         <h3 class="indent" style="margin-left:10rem;">Learning Resources</h3>
         <ul class="indent" style="margin-left:10rem;margin-right:10rem;">
-          <li><a href="#">Photoshop Document Template (PSD)</a></li>
-          <li><a href="#">Platform Size Requirements Guide</a></li>
+          <li><a href="https://drive.google.com/drive/folders/1LTNDBL6GfURfGQh2D6bmBbX9au4lE4qt?usp=sharing">Sample Photoshop Document Templates (PSD)</a></li>
+          <li><a href="https://support.discmakers.com/hc/en-us/articles/209098677--Using-our-Templates-with-Adobe-Photoshop">Using Our Templates with Adobe Photoshop</a></li>
+          <li><a href="http://throughthelensprod.blogspot.com/2017/01/digipak-first-stages.html">DigiPak: First Stages</a></li>
+          <li><a href="https://www.discmakers.com/templates/digipaks.asp">Digipak Templates</a></li>
+          <li><a href="https://pixflow.net/blog/how-to-create-high-quality-book-covers-album-art-with-photoshop-templates/">How to Create High-Quality Book Covers & Album Art with Photoshop Templates</a></li>
+           <li><a href="https://youtu.be/RkKcgrUNRaI?t=312">Does Accessibility Apply to Print Design?</a></li>
         </ul>
 
         <h3 class="indent" style="margin-left:10rem;">Module Deliverable</h3>
@@ -304,6 +325,14 @@
             alt="Infographic showing steps for design creation, template application, adaptation, layout confirmation, and export in Photoshop."
             width="1200" height="1200"
             loading="lazy" decoding="async">
+              <div id="infographic-desc" class="visually-hidden">
+          The infographic includes a dark blue title bar, then five labeled steps:
+          1) Create your design. 
+          2) Apply it to the template. 
+          3) Adapt to the template. 
+          4) Confirm your layout. 
+          5) Export and order your prints.
+        </div>
         </figure>
       </section>
     </div>
@@ -335,6 +364,7 @@
       tabs[i].focus();
     }
 
+    // Keyboard enhancements for tabs: Left/Right + Home/End + Enter/Space
     document.addEventListener('keydown', e => {
       const isTab = e.target.getAttribute('role') === 'tab';
       if(!isTab) return;
@@ -350,6 +380,12 @@
       } else if(e.key === 'ArrowLeft'){
         e.preventDefault();
         tabs[(current - 1 + tabs.length) % tabs.length].focus();
+      } else if (e.key === 'Home'){
+        e.preventDefault();
+        tabs[0].focus();
+      } else if (e.key === 'End'){
+        e.preventDefault();
+        tabs[tabs.length - 1].focus();
       }
     });
   </script>
