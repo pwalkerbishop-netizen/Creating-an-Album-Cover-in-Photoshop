@@ -52,9 +52,12 @@
     .skip-link:focus { top:6px; }
 
     header {
-      background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);
-      color:#fff; padding:2rem 0; text-align:center;
-    }
+  background:#5B3B5D;   /* replaced gradient with your purple */
+  color:#fff;
+  padding:2rem 0;
+  text-align:center;
+}
+
     header h1 { font-size:2.5rem; margin-bottom:.5rem; }
     .subtitle { font-size:1.2rem; opacity:.9; margin-bottom:1rem; }
 
@@ -94,7 +97,9 @@
     }
 
     .tab-button:hover { background:rgba(102,126,234,.1); }
-    .tab-button.active { background:#667eea; color:#fff; }
+    .tab-button.active { background:#5B3B5D;   
+  color:#fff;
+}
 
     .tab-button:focus,
     .tab-button:focus-visible {
@@ -241,6 +246,7 @@
           It’s time to bring an album design plan to life. You might choose to apply previously developed concepts, resources, and layouts from previous work. If you don’t have an immediate album design prepared, that’s okay! Gather some quick photos and graphics to apply to this exercise. You may also choose to use the sample content provided in the learning resources of the module. The goal is to practice fitting content into an album template.
         </p>
 
+        <!-- Centered, accessible video -->
         <figure aria-labelledby="vid1-title" aria-describedby="vid1-desc">
           <figcaption id="vid1-title" class="visually-hidden">
             Micro-learning video: Album Cover Template Usage in Adobe Photoshop
@@ -456,6 +462,7 @@ Hello everyone. Today we're going to apply an album cover design to a Photoshop 
       tabs[i].focus();
     }
 
+    // Keyboard enhancements for tabs: Left/Right + Home/End + Enter/Space
     document.addEventListener('keydown', e => {
       const isTab = e.target.getAttribute('role') === 'tab';
       if(!isTab) return;
